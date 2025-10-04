@@ -4,7 +4,7 @@
 # 机场订阅
 proxy-providers:
   Airport1:
-    url: "https://gofmbaicdqry.eu-central-1.clawcloudrun.com/sub/download/collection/3"
+    url: ""
     type: http
     interval: 86400
     health-check:
