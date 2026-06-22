@@ -2,25 +2,31 @@
   "dns": {
     "servers": [
       {
-        "tag": "openwrt-dns",
-        "type": "udp",
-        "server": "10.0.0.111",
-        "server_port": 5335
-      },
-      {
-        "tag": "local-fallback",
+        "tag": "local",
         "type": "udp",
         "server": "222.172.200.68"
+      },
+      {
+        "tag": "public",
+        "type": "https",
+        "server": "dns.alidns.com",
+        "domain_resolver": "local"
+      },
+      {
+        "tag": "foreign",
+        "type": "https",
+        "server": "1.1.1.1",
+        "detour": "🚀 节点选择"
       }
     ],
     "rules": [
       {
         "clash_mode": "direct",
-        "server": "local-fallback"
+        "server": "local"
       },
       {
         "clash_mode": "global",
-        "server": "openwrt-dns"
+        "server": "foreign"
       },
       {
         "domain_suffix": [
@@ -28,11 +34,11 @@
           "googleapis.cn",
           "xn--ngstr-lra8j.com"
         ],
-        "server": "openwrt-dns"
+        "server": "foreign"
       },
       {
         "rule_set": "geosite-google",
-        "server": "openwrt-dns"
+        "server": "foreign"
       },
       {
         "rule_set": [
@@ -40,10 +46,10 @@
           "geosite-apple",
           "geosite-private"
         ],
-        "server": "local-fallback"
+        "server": "local"
       }
     ],
-    "final": "openwrt-dns",
+    "final": "foreign",
     "strategy": "ipv4_only",
     "independent_cache": true
   },
@@ -721,7 +727,7 @@
     "auto_detect_interface": true,
     "default_mark": 666,
     "default_domain_resolver": {
-      "server": "openwrt-dns"
+      "server": "public"
     }
   },
   "log": {
