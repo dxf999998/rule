@@ -1,4 +1,4 @@
-cat << 'EOF'
+
 {
   "dns": {
     "servers": [
@@ -512,5 +512,5 @@ cat << 'EOF'
     }
   }
 }
-EOF
+
 
