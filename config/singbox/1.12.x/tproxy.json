@@ -4,7 +4,7 @@
       {
         "tag": "openwrt-dns",
         "type": "udp",
-        "server": "10.0.0.111",
+        "server": "10.0.0.11",
         "server_port": 5335
       },
       {
