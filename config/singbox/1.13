@@ -1,3 +1,4 @@
+cat > /etc/sing-box/config.json << 'EOF'
 {
   "dns": {
     "servers": [
@@ -17,6 +18,12 @@
         "type": "https",
         "server": "1.1.1.1",
         "detour": "默认代理"
+      },
+      {
+        "tag": "ali",
+        "type": "https",
+        "server": "dns.alidns.com",
+        "domain_resolver": "local"
       }
     ],
     "rules": [
@@ -95,29 +102,31 @@
     }
   ],
   "outbounds": [
-    {"tag": "默认代理", "type": "selector", "outbounds": ["日本手动", "狮城手动", "香港手动", "美国手动", "手动选择", "自动选择"]},
-    {"tag": "AI", "type": "selector", "outbounds": ["日本手动", "狮城手动", "香港手动", "美国手动", "手动选择", "自动选择"]},
-    {"tag": "YouTube", "type": "selector", "outbounds": ["日本手动", "狮城手动", "香港手动", "美国手动", "手动选择", "自动选择"]},
-    {"tag": "Google", "type": "selector", "outbounds": ["日本手动", "狮城手动", "香港手动", "美国手动", "手动选择", "自动选择"]},
-    {"tag": "Github", "type": "selector", "outbounds": ["日本手动", "狮城手动", "香港手动", "美国手动", "手动选择", "自动选择"]},
-    {"tag": "Telegram", "type": "selector", "outbounds": ["日本手动", "狮城手动", "香港手动", "美国手动", "手动选择", "自动选择"]},
-    {"tag": "TikTok", "type": "selector", "outbounds": ["日本手动", "狮城手动", "香港手动", "美国手动", "手动选择", "自动选择"]},
-    {"tag": "Netflix", "type": "selector", "outbounds": ["日本手动", "狮城手动", "香港手动", "美国手动", "手动选择", "自动选择"]},
-    {"tag": "PayPal", "type": "selector", "outbounds": ["日本手动", "狮城手动", "香港手动", "美国手动", "手动选择", "自动选择"]},
-    {"tag": "Steam", "type": "selector", "outbounds": ["日本手动", "狮城手动", "香港手动", "美国手动", "手动选择", "自动选择"]},
-    {"tag": "Microsoft", "type": "selector", "outbounds": ["日本手动", "狮城手动", "香港手动", "美国手动", "手动选择", "自动选择"]},
-    {"tag": "OneDrive", "type": "selector", "outbounds": ["日本手动", "狮城手动", "香港手动", "美国手动", "手动选择", "自动选择"]},
-    {"tag": "Apple", "type": "selector", "outbounds": ["日本手动", "狮城手动", "香港手动", "美国手动", "手动选择", "自动选择", "直连"]},
-    {"tag": "漏网之鱼", "type": "selector", "outbounds": ["默认代理", "日本手动", "狮城手动", "香港手动", "美国手动", "手动选择", "自动选择", "直连"]},
-    {"tag": "日本手动", "type": "selector", "outbounds": []},
-    {"tag": "狮城手动", "type": "selector", "outbounds": []},
-    {"tag": "香港手动", "type": "selector", "outbounds": []},
-    {"tag": "美国手动", "type": "selector", "outbounds": []},
-    {"tag": "手动选择", "type": "selector", "outbounds": []},
-    {"tag": "自动选择", "type": "urltest", "outbounds": [], "url": "https://clients1.google.com/generate_204", "interval": "30m", "tolerance": 100},
+    {"tag": "默认代理", "type": "selector", "outbounds": ["日本手动", "日本自动", "狮城手动", "香港手动", "美国手动", "美国自动", "手动选择", "自动选择"]},
+    {"tag": "AI", "type": "selector", "outbounds": ["日本手动", "日本自动", "狮城手动", "香港手动", "美国手动", "美国自动", "手动选择", "自动选择"]},
+    {"tag": "YouTube", "type": "selector", "outbounds": ["日本手动", "日本自动", "狮城手动", "香港手动", "美国手动", "美国自动", "手动选择", "自动选择"]},
+    {"tag": "Google", "type": "selector", "outbounds": ["日本手动", "日本自动", "狮城手动", "香港手动", "美国手动", "美国自动", "手动选择", "自动选择"]},
+    {"tag": "Github", "type": "selector", "outbounds": ["日本手动", "日本自动", "狮城手动", "香港手动", "美国手动", "美国自动", "手动选择", "自动选择"]},
+    {"tag": "Telegram", "type": "selector", "outbounds": ["日本手动", "日本自动", "狮城手动", "香港手动", "美国手动", "美国自动", "手动选择", "自动选择"]},
+    {"tag": "TikTok", "type": "selector", "outbounds": ["日本手动", "日本自动", "狮城手动", "香港手动", "美国手动", "美国自动", "手动选择", "自动选择"]},
+    {"tag": "Netflix", "type": "selector", "outbounds": ["日本手动", "日本自动", "狮城手动", "香港手动", "美国手动", "美国自动", "手动选择", "自动选择"]},
+    {"tag": "PayPal", "type": "selector", "outbounds": ["日本手动", "日本自动", "狮城手动", "香港手动", "美国手动", "美国自动", "手动选择", "自动选择"]},
+    {"tag": "Steam", "type": "selector", "outbounds": ["日本手动", "日本自动", "狮城手动", "香港手动", "美国手动", "美国自动", "手动选择", "自动选择"]},
+    {"tag": "Microsoft", "type": "selector", "outbounds": ["日本手动", "日本自动", "狮城手动", "香港手动", "美国手动", "美国自动", "手动选择", "自动选择"]},
+    {"tag": "OneDrive", "type": "selector", "outbounds": ["日本手动", "日本自动", "狮城手动", "香港手动", "美国手动", "美国自动", "手动选择", "自动选择"]},
+    {"tag": "Apple", "type": "selector", "outbounds": ["日本手动", "日本自动", "狮城手动", "香港手动", "美国手动", "美国自动", "手动选择", "自动选择", "直连"]},
+    {"tag": "漏网之鱼", "type": "selector", "outbounds": ["默认代理", "日本手动", "日本自动", "狮城手动", "香港手动", "美国手动", "美国自动", "手动选择", "自动选择", "直连"]},
+    {"tag": "日本手动", "type": "selector", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["🇯🇵", "JP", "jp", "日本", "日", "Japan"]}, {"action": "exclude", "keywords": ["免费"]}]},
+    {"tag": "日本自动", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["🇯🇵", "JP", "jp", "日本", "日", "Japan"]}, {"action": "exclude", "keywords": ["免费"]}], "url": "https://clients1.google.com/generate_204", "interval": "30m", "tolerance": 100},
+    {"tag": "狮城手动", "type": "selector", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["🇸🇬", "SG", "sg", "新加坡", "狮城", "Singapore"]}, {"action": "exclude", "keywords": ["免费"]}]},
+    {"tag": "香港手动", "type": "selector", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["🇭🇰", "HK", "hk", "香港", "港", "HongKong"]}, {"action": "exclude", "keywords": ["免费"]}]},
+    {"tag": "美国手动", "type": "selector", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["🇺🇸", "US", "us", "美国", "美", "United States"]}, {"action": "exclude", "keywords": ["AUS", "RUS", "免费"]}]},
+    {"tag": "美国自动", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["🇺🇸", "US", "us", "美国", "美", "United States"]}, {"action": "exclude", "keywords": ["AUS", "RUS", "免费"]}], "url": "https://clients1.google.com/generate_204", "interval": "30m", "tolerance": 100},
+    {"tag": "手动选择", "type": "selector", "outbounds": ["{all}"], "filter": [{"action": "exclude", "keywords": ["官网", "到期时间", "剩余", "流量", "套餐", "免费", "订阅", "全球直连", "GB", "Expire Date", "Traffic", "ExpireDate"]}]},
+    {"tag": "自动选择", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "exclude", "keywords": ["官网", "到期时间", "剩余", "流量", "套餐", "免费", "订阅", "全球直连", "GB", "Expire Date", "Traffic", "ExpireDate"]}], "url": "https://clients1.google.com/generate_204", "interval": "30m", "tolerance": 100},
     {"tag": "延迟辅助", "type": "urltest", "outbounds": ["直连"], "url": "http://connect.rom.miui.com/generate_204", "interval": "30m"},
-    {"tag": "GLOBAL", "type": "selector", "outbounds": ["默认代理", "AI", "YouTube", "Google", "Github", "Telegram", "TikTok", "Netflix", "PayPal", "Steam", "Microsoft", "OneDrive", "Apple", "漏网之鱼", "日本手动", "狮城手动", "香港手动", "美国手动", "手动选择", "自动选择", "延迟辅助", "直连"]},
-    {"tag": "直连", "type": "direct", "domain_resolver": "ali"}
+    {"tag": "GLOBAL", "type": "selector", "outbounds": ["默认代理", "AI", "YouTube", "Google", "Github", "Telegram", "TikTok", "Netflix", "PayPal", "Steam", "Microsoft", "OneDrive", "Apple", "漏网之鱼", "日本手动", "日本自动", "狮城手动", "香港手动", "美国手动", "美国自动", "手动选择", "自动选择", "延迟辅助", "直连"]},
+    {"tag": "直连", "type": "direct", "domain_resolver": "public"}
   ],
   "route": {
     "rules": [
@@ -173,11 +182,12 @@
       {"tag": "geoip-apple", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo-lite/geoip/apple.srs", "download_detour": "直连"},
       {"tag": "geoip-telegram", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/telegram.srs", "download_detour": "直连"},
       {"tag": "geoip-netflix", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/netflix.srs", "download_detour": "直连"},
-      {"tag": "geoip-cn", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/OneOhCloud/one-geoip/rule-set/one-china.srs", "download_detour": "直连"}
+      {"tag": "geoip-cn", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/OneOhCloud/one-geoip/rule-set/one-china.srs", "download_detour": "直连"},
+      {"tag": "geosite-private", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/private.srs", "download_detour": "直连"}
     ],
     "final": "漏网之鱼",
     "auto_detect_interface": true,
-    "default_domain_resolver": {"server": "ali"}
+    "default_domain_resolver": {"server": "public"}
   },
   "log": {
     "disabled": false,
@@ -200,3 +210,4 @@
     }
   }
 }
+EOF
