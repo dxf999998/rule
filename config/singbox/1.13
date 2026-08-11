@@ -133,7 +133,7 @@
       {"type": "logical", "mode": "or", "rules": [{"domain": "Mijia Cloud"}, {"domain_suffix": "push.apple.com"}, {"rule_set": "geoip-telegram"}], "invert": true, "action": "sniff", "sniffer": ["http", "tls", "quic", "dns"], "timeout": "500ms"},
       {"type": "logical", "mode": "or", "rules": [{"port": 53}, {"protocol": "dns"}], "action": "hijack-dns"},
       {"type": "logical", "mode": "or", "rules": [{"port": 853}, {"protocol": "stun"}], "action": "reject"},
-      {"type": "logical", "mode": "and", "rules": [{"protocol": "quic"}, {"rule_set": "geosite-!cn"}], "action": "reject"},
+      
       {"network": "icmp", "outbound": "直连"},
       {"ip_is_private": true, "outbound": "直连"},
       {"clash_mode": "Direct", "outbound": "直连"},
