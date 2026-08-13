@@ -1,4 +1,3 @@
-
 {
   "dns": {
     "servers": [
@@ -48,11 +47,15 @@
         "server": "foreign"
       },
       {
-        "rule_set": [
-          "geosite-cn",
-          "geosite-apple",
-          "geosite-private"
-        ],
+        "rule_set": "geosite-cn",
+        "server": "local"
+      },
+      {
+        "rule_set": "geosite-apple",
+        "server": "local"
+      },
+      {
+        "rule_set": "geosite-private",
         "server": "local"
       }
     ],
@@ -93,12 +96,6 @@
       "tag": "redirect-in",
       "listen": "0.0.0.0",
       "listen_port": 7892
-    },
-    {
-      "type": "direct",
-      "tag": "dns-in",
-      "listen": "0.0.0.0",
-      "listen_port": 5353
     }
   ],
   "outbounds": [
@@ -132,7 +129,7 @@
   ],
   "route": {
     "rules": [
-      {"type": "logical", "mode": "or", "rules": [{"domain": "Mijia Cloud"}, {"domain_suffix": "push.apple.com"}, {"rule_set": "geoip-telegram"}], "invert": true, "action": "sniff", "sniffer": ["http", "tls", "quic", "dns"], "timeout": "500ms"},
+      {"type": "logical", "mode": "or", "rules": [{"domain_suffix": "io.mi.com"}, {"domain_suffix": "push.apple.com"}, {"rule_set": "geoip-telegram"}], "invert": true, "action": "sniff", "sniffer": ["http", "tls", "quic", "dns"], "timeout": "500ms"},
       {"type": "logical", "mode": "or", "rules": [{"port": 53}, {"protocol": "dns"}], "action": "hijack-dns"},
       {"type": "logical", "mode": "or", "rules": [{"port": 853}, {"protocol": "stun"}], "action": "reject"},
       
@@ -212,4 +209,3 @@
     }
   }
 }
-
