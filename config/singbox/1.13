@@ -1,4 +1,5 @@
 {
+  
   "dns": {
     "servers": [
       {
@@ -17,12 +18,6 @@
         "type": "https",
         "server": "1.1.1.1",
         "detour": "默认代理"
-      },
-      {
-        "tag": "ali",
-        "type": "https",
-        "server": "dns.alidns.com",
-        "domain_resolver": "local"
       }
     ],
     "rules": [
@@ -47,6 +42,30 @@
         "server": "foreign"
       },
       {
+        "rule_set": "geosite-ai",
+        "server": "foreign"
+      },
+      {
+        "rule_set": "geosite-youtube",
+        "server": "foreign"
+      },
+      {
+        "rule_set": "geosite-github",
+        "server": "foreign"
+      },
+      {
+        "rule_set": "geosite-telegram",
+        "server": "foreign"
+      },
+      {
+        "rule_set": "geosite-tiktok",
+        "server": "foreign"
+      },
+      {
+        "rule_set": "geosite-netflix",
+        "server": "foreign"
+      },
+      {
         "rule_set": "geosite-cn",
         "server": "local"
       },
@@ -61,7 +80,13 @@
     ],
     "final": "foreign",
     "strategy": "ipv4_only",
-    "independent_cache": true
+    "cache_capacity": 4096,
+    "optimistic": {
+      "enabled": true,
+      "timeout": "3d"
+    },
+    "timeout": "5s",
+    "reverse_mapping": true
   },
   "inbounds": [
     {
@@ -74,7 +99,7 @@
       ],
       "mtu": 1500,
       "auto_route": true,
-      "auto_redirect": false,
+      "auto_redirect": true,
       "strict_route": true,
       "stack": "system",
       "route_exclude_address": [
@@ -109,7 +134,8 @@
         "美国自动",
         "手动选择",
         "自动选择"
-      ]
+      ],
+      "interrupt_exist_connections": true
     },
     {
       "tag": "AI",
@@ -121,7 +147,8 @@
         "美国自动",
         "手动选择",
         "自动选择"
-      ]
+      ],
+      "interrupt_exist_connections": true
     },
     {
       "tag": "X",
@@ -133,7 +160,9 @@
         "美国自动",
         "手动选择",
         "自动选择"
-      ]
+      ],
+      "default": "自动选择",
+      "interrupt_exist_connections": true
     },
     {
       "tag": "YouTube",
@@ -145,7 +174,8 @@
         "美国自动",
         "手动选择",
         "自动选择"
-      ]
+      ],
+      "interrupt_exist_connections": true
     },
     {
       "tag": "Google",
@@ -157,7 +187,8 @@
         "美国自动",
         "手动选择",
         "自动选择"
-      ]
+      ],
+      "interrupt_exist_connections": true
     },
     {
       "tag": "Github",
@@ -169,7 +200,8 @@
         "美国自动",
         "手动选择",
         "自动选择"
-      ]
+      ],
+      "interrupt_exist_connections": true
     },
     {
       "tag": "Telegram",
@@ -181,7 +213,8 @@
         "美国自动",
         "手动选择",
         "自动选择"
-      ]
+      ],
+      "interrupt_exist_connections": true
     },
     {
       "tag": "TikTok",
@@ -193,7 +226,8 @@
         "美国自动",
         "手动选择",
         "自动选择"
-      ]
+      ],
+      "interrupt_exist_connections": true
     },
     {
       "tag": "Netflix",
@@ -205,7 +239,8 @@
         "美国自动",
         "手动选择",
         "自动选择"
-      ]
+      ],
+      "interrupt_exist_connections": true
     },
     {
       "tag": "PayPal",
@@ -217,7 +252,8 @@
         "美国自动",
         "手动选择",
         "自动选择"
-      ]
+      ],
+      "interrupt_exist_connections": true
     },
     {
       "tag": "Steam",
@@ -229,7 +265,8 @@
         "美国自动",
         "手动选择",
         "自动选择"
-      ]
+      ],
+      "interrupt_exist_connections": true
     },
     {
       "tag": "Microsoft",
@@ -242,7 +279,8 @@
         "美国自动",
         "手动选择",
         "自动选择"
-      ]
+      ],
+      "interrupt_exist_connections": true
     },
     {
       "tag": "OneDrive",
@@ -255,7 +293,8 @@
         "美国自动",
         "手动选择",
         "自动选择"
-      ]
+      ],
+      "interrupt_exist_connections": true
     },
     {
       "tag": "Apple",
@@ -268,7 +307,8 @@
         "手动选择",
         "自动选择",
         "直连"
-      ]
+      ],
+      "interrupt_exist_connections": true
     },
     {
       "tag": "漏网之鱼",
@@ -282,7 +322,8 @@
         "手动选择",
         "自动选择",
         "直连"
-      ]
+      ],
+      "interrupt_exist_connections": true
     },
     {
       "tag": "日本自动",
@@ -309,9 +350,11 @@
           ]
         }
       ],
-      "url": "https://clients1.google.com/generate_204",
-      "interval": "3m",
-      "tolerance": 30
+      "url": "https://cp.cloudflare.com/generate_204",
+      "interval": "5m",
+      "tolerance": 30,
+      "idle_timeout": "10m",
+      "interrupt_exist_connections": false
     },
     {
       "tag": "狮城自动",
@@ -338,9 +381,11 @@
           ]
         }
       ],
-      "url": "https://clients1.google.com/generate_204",
-      "interval": "3m",
-      "tolerance": 30
+      "url": "https://cp.cloudflare.com/generate_204",
+      "interval": "5m",
+      "tolerance": 30,
+      "idle_timeout": "10m",
+      "interrupt_exist_connections": false
     },
     {
       "tag": "香港自动",
@@ -367,9 +412,11 @@
           ]
         }
       ],
-      "url": "https://clients1.google.com/generate_204",
-      "interval": "3m",
-      "tolerance": 30
+      "url": "https://cp.cloudflare.com/generate_204",
+      "interval": "5m",
+      "tolerance": 30,
+      "idle_timeout": "10m",
+      "interrupt_exist_connections": false
     },
     {
       "tag": "美国自动",
@@ -398,9 +445,11 @@
           ]
         }
       ],
-      "url": "https://clients1.google.com/generate_204",
-      "interval": "3m",
-      "tolerance": 30
+      "url": "https://cp.cloudflare.com/generate_204",
+      "interval": "5m",
+      "tolerance": 30,
+      "idle_timeout": "10m",
+      "interrupt_exist_connections": false
     },
     {
       "tag": "手动选择",
@@ -426,7 +475,8 @@
             "ExpireDate"
           ]
         }
-      ]
+      ],
+      "interrupt_exist_connections": true
     },
     {
       "tag": "自动选择",
@@ -453,18 +503,11 @@
           ]
         }
       ],
-      "url": "https://clients1.google.com/generate_204",
-      "interval": "3m",
-      "tolerance": 30
-    },
-    {
-      "tag": "延迟辅助",
-      "type": "urltest",
-      "outbounds": [
-        "直连"
-      ],
-      "url": "http://connect.rom.miui.com/generate_204",
-      "interval": "30m"
+      "url": "https://cp.cloudflare.com/generate_204",
+      "interval": "5m",
+      "tolerance": 30,
+      "idle_timeout": "10m",
+      "interrupt_exist_connections": false
     },
     {
       "tag": "GLOBAL",
@@ -491,9 +534,9 @@
         "美国自动",
         "手动选择",
         "自动选择",
-        "延迟辅助",
         "直连"
-      ]
+      ],
+      "interrupt_exist_connections": true
     },
     {
       "tag": "直连",
@@ -669,168 +712,192 @@
         "type": "remote",
         "format": "source",
         "url": "https://gh-proxy.com/https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/main/rules/fakeipfilter.json",
-        "download_detour": "直连"
+        "http_client": "规则集下载",
+        "update_interval": "1d"
       },
       {
         "tag": "geosite-ai",
         "type": "remote",
         "format": "binary",
         "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/category-ai-!cn.srs",
-        "download_detour": "直连"
+        "http_client": "规则集下载",
+        "update_interval": "1d"
       },
       {
         "tag": "geosite-youtube",
         "type": "remote",
         "format": "binary",
         "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/youtube.srs",
-        "download_detour": "直连"
+        "http_client": "规则集下载",
+        "update_interval": "1d"
       },
       {
         "tag": "geosite-google",
         "type": "remote",
         "format": "binary",
         "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/google.srs",
-        "download_detour": "直连"
+        "http_client": "规则集下载",
+        "update_interval": "1d"
       },
       {
         "tag": "geosite-github",
         "type": "remote",
         "format": "binary",
         "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/github.srs",
-        "download_detour": "直连"
+        "http_client": "规则集下载",
+        "update_interval": "1d"
       },
       {
         "tag": "geosite-onedrive",
         "type": "remote",
         "format": "binary",
         "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/onedrive.srs",
-        "download_detour": "直连"
+        "http_client": "规则集下载",
+        "update_interval": "1d"
       },
       {
         "tag": "geosite-microsoft",
         "type": "remote",
         "format": "binary",
         "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/microsoft.srs",
-        "download_detour": "直连"
+        "http_client": "规则集下载",
+        "update_interval": "1d"
       },
       {
         "tag": "geosite-apple",
         "type": "remote",
         "format": "binary",
         "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/apple.srs",
-        "download_detour": "直连"
+        "http_client": "规则集下载",
+        "update_interval": "1d"
       },
       {
         "tag": "geosite-telegram",
         "type": "remote",
         "format": "binary",
         "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/telegram.srs",
-        "download_detour": "直连"
+        "http_client": "规则集下载",
+        "update_interval": "1d"
       },
       {
         "tag": "geosite-tiktok",
         "type": "remote",
         "format": "binary",
         "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/tiktok.srs",
-        "download_detour": "直连"
+        "http_client": "规则集下载",
+        "update_interval": "1d"
       },
       {
         "tag": "geosite-netflix",
         "type": "remote",
         "format": "binary",
         "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/netflix.srs",
-        "download_detour": "直连"
+        "http_client": "规则集下载",
+        "update_interval": "1d"
       },
       {
         "tag": "geosite-paypal",
         "type": "remote",
         "format": "binary",
         "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/paypal.srs",
-        "download_detour": "直连"
+        "http_client": "规则集下载",
+        "update_interval": "1d"
       },
       {
         "tag": "geosite-usd",
         "type": "remote",
         "format": "binary",
         "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/category-cryptocurrency.srs",
-        "download_detour": "直连"
+        "http_client": "规则集下载",
+        "update_interval": "1d"
       },
       {
         "tag": "geosite-steamcn",
         "type": "remote",
         "format": "binary",
         "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/steam@cn.srs",
-        "download_detour": "直连"
+        "http_client": "规则集下载",
+        "update_interval": "1d"
       },
       {
         "tag": "geosite-steam",
         "type": "remote",
         "format": "binary",
         "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/steam.srs",
-        "download_detour": "直连"
+        "http_client": "规则集下载",
+        "update_interval": "1d"
       },
       {
         "tag": "geosite-!cn",
         "type": "remote",
         "format": "binary",
         "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/geolocation-!cn.srs",
-        "download_detour": "直连"
+        "http_client": "规则集下载",
+        "update_interval": "1d"
       },
       {
         "tag": "geosite-cn",
         "type": "remote",
         "format": "binary",
         "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/cn.srs",
-        "download_detour": "直连"
+        "http_client": "规则集下载",
+        "update_interval": "1d"
       },
       {
         "tag": "geoip-google",
         "type": "remote",
         "format": "binary",
         "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/google.srs",
-        "download_detour": "直连"
+        "http_client": "规则集下载",
+        "update_interval": "1d"
       },
       {
         "tag": "geoip-apple",
         "type": "remote",
         "format": "binary",
         "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo-lite/geoip/apple.srs",
-        "download_detour": "直连"
+        "http_client": "规则集下载",
+        "update_interval": "1d"
       },
       {
         "tag": "geoip-telegram",
         "type": "remote",
         "format": "binary",
         "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/telegram.srs",
-        "download_detour": "直连"
+        "http_client": "规则集下载",
+        "update_interval": "1d"
       },
       {
         "tag": "geoip-netflix",
         "type": "remote",
         "format": "binary",
         "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/netflix.srs",
-        "download_detour": "直连"
+        "http_client": "规则集下载",
+        "update_interval": "1d"
       },
       {
         "tag": "geoip-cn",
         "type": "remote",
         "format": "binary",
         "url": "https://gh-proxy.com/https://raw.githubusercontent.com/OneOhCloud/one-geoip/rule-set/one-china.srs",
-        "download_detour": "直连"
+        "http_client": "规则集下载",
+        "update_interval": "1d"
       },
       {
         "tag": "geosite-private",
         "type": "remote",
         "format": "binary",
         "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/private.srs",
-        "download_detour": "直连"
+        "http_client": "规则集下载",
+        "update_interval": "1d"
       }
     ],
     "final": "漏网之鱼",
     "auto_detect_interface": true,
     "default_domain_resolver": {
       "server": "public"
-    }
+    },
+    "default_http_client": "规则集下载"
   },
   "log": {
     "disabled": false,
@@ -851,6 +918,12 @@
       "path": "/etc/sing-box/cache.db",
       "store_fakeip": false
     }
-  }
+  },
+  "http_clients": [
+    {
+      "tag": "规则集下载",
+      "detour": "直连",
+      "domain_resolver": "local"
+    }
+  ]
 }
-
