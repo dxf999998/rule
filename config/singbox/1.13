@@ -350,7 +350,7 @@
           ]
         }
       ],
-      "url": "https://www.gstatic.com/generate_204",
+      "url": "https://cp.cloudflare.com/generate_204",
       "interval": "5m",
       "tolerance": 30,
       "idle_timeout": "10m",
@@ -381,7 +381,7 @@
           ]
         }
       ],
-      "url": "https://www.gstatic.com/generate_204",
+      "url": "https://cp.cloudflare.com/generate_204",
       "interval": "5m",
       "tolerance": 30,
       "idle_timeout": "10m",
@@ -412,7 +412,7 @@
           ]
         }
       ],
-      "url": "https://www.gstatic.com/generate_204",
+      "url": "https://cp.cloudflare.com/generate_204",
       "interval": "5m",
       "tolerance": 30,
       "idle_timeout": "10m",
@@ -445,7 +445,7 @@
           ]
         }
       ],
-      "url": "https://www.gstatic.com/generate_204",
+      "url": "https://cp.cloudflare.com/generate_204",
       "interval": "5m",
       "tolerance": 30,
       "idle_timeout": "10m",
@@ -503,7 +503,7 @@
           ]
         }
       ],
-      "url": "https://www.gstatic.com/generate_204",
+      "url": "https://cp.cloudflare.com/generate_204",
       "interval": "5m",
       "tolerance": 30,
       "idle_timeout": "10m",
@@ -899,13 +899,6 @@
     },
     "default_http_client": "规则集下载"
   },
-  "http_clients": [
-    {
-      "tag": "规则集下载",
-      "detour": "直连",
-      "domain_resolver": "local"
-    }
-  ],
   "log": {
     "disabled": false,
     "level": "info",
@@ -925,5 +918,12 @@
       "path": "/etc/sing-box/cache.db",
       "store_fakeip": false
     }
-  }
+  },
+  "http_clients": [
+    {
+      "tag": "规则集下载",
+      "detour": "直连",
+      "domain_resolver": "local"
+    }
+  ]
 }
