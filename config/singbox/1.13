@@ -48,6 +48,14 @@
         "server": "foreign"
       },
       {
+        "rule_set": "geosite-openai",
+        "server": "foreign"
+      },
+      {
+        "rule_set": "geosite-gemini",
+        "server": "foreign"
+      },
+      {
         "rule_set": "geosite-google",
         "server": "foreign"
       },
@@ -115,6 +123,28 @@
         "日本自动",
         "狮城自动",
         "香港自动",
+        "手动选择",
+        "自动选择"
+      ]
+    },
+    {
+      "tag": "OpenAI",
+      "type": "selector",
+      "outbounds": [
+        "美国自动",
+        "日本自动",
+        "狮城自动",
+        "手动选择",
+        "自动选择"
+      ]
+    },
+    {
+      "tag": "Gemini",
+      "type": "selector",
+      "outbounds": [
+        "美国自动",
+        "日本自动",
+        "狮城自动",
         "手动选择",
         "自动选择"
       ]
@@ -491,6 +521,8 @@
       "type": "selector",
       "outbounds": [
         "默认代理",
+        "OpenAI",
+        "Gemini",
         "Muse AI",
         "AI",
         "X",
@@ -601,6 +633,14 @@
         "outbound": "Muse AI"
       },
       {
+        "rule_set": "geosite-openai",
+        "outbound": "OpenAI"
+      },
+      {
+        "rule_set": "geosite-gemini",
+        "outbound": "Gemini"
+      },
+      {
         "domain_suffix": [
           "x.com",
           "twitter.com",
@@ -700,6 +740,20 @@
         "type": "remote",
         "format": "source",
         "url": "https://gh-proxy.com/https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/main/rules/fakeipfilter.json",
+        "download_detour": "直连"
+      },
+      {
+        "tag": "geosite-openai",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/openai.srs",
+        "download_detour": "直连"
+      },
+      {
+        "tag": "geosite-gemini",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/google-gemini.srs",
         "download_detour": "直连"
       },
       {
