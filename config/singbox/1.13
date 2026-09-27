@@ -26,29 +26,207 @@
     "reverse_mapping": true
   },
   "outbounds": [
-    {"tag": "默认代理", "type": "selector", "outbounds": ["日本手动", "狮城手动", "香港手动", "美国手动", "手动选择", "自动选择"]},
-    {"tag": "AI", "type": "selector", "outbounds": ["日本手动", "狮城手动", "香港手动", "美国手动", "手动选择", "自动选择"]},
-    {"tag": "YouTube", "type": "selector", "outbounds": ["日本手动", "狮城手动", "香港手动", "美国手动", "手动选择", "自动选择"]},
-    {"tag": "Google", "type": "selector", "outbounds": ["日本手动", "狮城手动", "香港手动", "美国手动", "手动选择", "自动选择"]},
-    {"tag": "Github", "type": "selector", "outbounds": ["日本手动", "狮城手动", "香港手动", "美国手动", "手动选择", "自动选择"]},
-    {"tag": "Telegram", "type": "selector", "outbounds": ["日本手动", "狮城手动", "香港手动", "美国手动", "手动选择", "自动选择"]},
-    {"tag": "TikTok", "type": "selector", "outbounds": ["日本手动", "狮城手动", "香港手动", "美国手动", "手动选择", "自动选择"]},
-    {"tag": "Netflix", "type": "selector", "outbounds": ["日本手动", "狮城手动", "香港手动", "美国手动", "手动选择", "自动选择"]},
-    {"tag": "Wallet", "type": "selector", "outbounds": ["日本手动", "狮城手动", "香港手动", "美国手动", "手动选择", "自动选择"]},
-    {"tag": "Steam", "type": "selector", "outbounds": ["日本手动", "狮城手动", "香港手动", "美国手动", "手动选择", "自动选择"]},
-    {"tag": "Microsoft", "type": "selector", "outbounds": ["日本手动", "狮城手动", "香港手动", "美国手动", "手动选择", "自动选择", "直连"]},
-    {"tag": "OneDrive", "type": "selector", "outbounds": ["日本手动", "狮城手动", "香港手动", "美国手动", "手动选择", "自动选择", "直连"]},
-    {"tag": "Apple", "type": "selector", "outbounds": ["日本手动", "狮城手动", "香港手动", "美国手动", "手动选择", "自动选择", "直连"]},
-    {"tag": "漏网之鱼", "type": "selector", "outbounds": ["默认代理", "日本手动", "狮城手动", "香港手动", "美国手动", "手动选择", "自动选择", "直连"]},
-    {"tag": "日本手动", "type": "selector", "outbounds": []},
-    {"tag": "狮城手动", "type": "selector", "outbounds": []},
-    {"tag": "香港手动", "type": "selector", "outbounds": []},
-    {"tag": "美国手动", "type": "selector", "outbounds": []},
-    {"tag": "手动选择", "type": "selector", "outbounds": []},
-    {"tag": "自动选择", "type": "urltest", "outbounds": [], "url": "https://clients1.google.com/generate_204", "interval": "30m", "tolerance": 100},
-    {"tag": "延迟辅助", "type": "urltest", "outbounds": ["直连"], "url": "http://connect.rom.miui.com/generate_204", "interval": "30m"},
-    {"tag": "GLOBAL", "type": "selector", "outbounds": ["默认代理", "AI", "YouTube", "Google", "Github", "Telegram", "TikTok", "Netflix", "Wallet", "Steam", "Microsoft", "OneDrive", "Apple", "漏网之鱼", "日本手动", "狮城手动", "香港手动", "美国手动", "手动选择", "自动选择", "延迟辅助", "直连"]},
-    {"tag": "直连", "type": "direct", "domain_resolver": "ali"}
+    {
+      "tag": "日本自动",
+      "type": "urltest",
+      "outbounds": ["{all}"],
+      "filter": [
+        {"action": "include", "keywords": ["🇯🇵", "JP", "jp", "日本", "日", "Japan"]},
+        {"action": "exclude", "keywords": ["免费"]}
+      ],
+      "url": "https://clients1.google.com/generate_204",
+      "interval": "3m",
+      "tolerance": 30
+    },
+    {
+      "tag": "狮城自动",
+      "type": "urltest",
+      "outbounds": ["{all}"],
+      "filter": [
+        {"action": "include", "keywords": ["🇸🇬", "SG", "sg", "新加坡", "狮城", "Singapore"]},
+        {"action": "exclude", "keywords": ["免费"]}
+      ],
+      "url": "https://clients1.google.com/generate_204",
+      "interval": "3m",
+      "tolerance": 30
+    },
+    {
+      "tag": "香港自动",
+      "type": "urltest",
+      "outbounds": ["{all}"],
+      "filter": [
+        {"action": "include", "keywords": ["🇭🇰", "HK", "hk", "香港", "港", "HongKong"]},
+        {"action": "exclude", "keywords": ["免费"]}
+      ],
+      "url": "https://clients1.google.com/generate_204",
+      "interval": "3m",
+      "tolerance": 30
+    },
+    {
+      "tag": "美国自动",
+      "type": "urltest",
+      "outbounds": ["{all}"],
+      "filter": [
+        {"action": "include", "keywords": ["🇺🇸", "US", "us", "美国", "美", "United States"]},
+        {"action": "exclude", "keywords": ["AUS", "RUS", "免费"]}
+      ],
+      "url": "https://clients1.google.com/generate_204",
+      "interval": "3m",
+      "tolerance": 30
+    },
+    {
+      "tag": "手动选择",
+      "type": "selector",
+      "outbounds": ["{all}"],
+      "filter": [
+        {"action": "exclude", "keywords": ["官网", "到期时间", "剩余", "流量", "套餐", "免费", "订阅", "全球直连", "GB", "Expire Date", "Traffic", "ExpireDate"]}
+      ]
+    },
+    {
+      "tag": "自动选择",
+      "type": "urltest",
+      "outbounds": ["{all}"],
+      "filter": [
+        {"action": "exclude", "keywords": ["官网", "到期时间", "剩余", "流量", "套餐", "免费", "订阅", "全球直连", "GB", "Expire Date", "Traffic", "ExpireDate"]}
+      ],
+      "url": "https://clients1.google.com/generate_204",
+      "interval": "3m",
+      "tolerance": 30
+    },
+    {
+      "tag": "延迟辅助",
+      "type": "urltest",
+      "outbounds": ["直连"],
+      "url": "http://connect.rom.miui.com/generate_204",
+      "interval": "30m"
+    },
+    {
+      "tag": "默认代理",
+      "type": "selector",
+      "outbounds": ["日本自动", "狮城自动", "香港自动", "美国自动", "手动选择", "自动选择"]
+    },
+    {
+      "tag": "OpenAI",
+      "type": "selector",
+      "outbounds": ["日本自动", "狮城自动", "香港自动", "美国自动", "手动选择", "自动选择"]
+    },
+    {
+      "tag": "Gemini",
+      "type": "selector",
+      "outbounds": ["日本自动", "狮城自动", "香港自动", "美国自动", "手动选择", "自动选择"]
+    },
+    {
+      "tag": "Muse AI",
+      "type": "selector",
+      "outbounds": ["日本自动", "狮城自动", "香港自动", "美国自动", "手动选择", "自动选择"]
+    },
+    {
+      "tag": "AI",
+      "type": "selector",
+      "outbounds": ["日本自动", "狮城自动", "香港自动", "美国自动", "手动选择", "自动选择"]
+    },
+    {
+      "tag": "X",
+      "type": "selector",
+      "outbounds": ["日本自动", "狮城自动", "香港自动", "美国自动", "手动选择", "自动选择"]
+    },
+    {
+      "tag": "YouTube",
+      "type": "selector",
+      "outbounds": ["日本自动", "狮城自动", "香港自动", "美国自动", "手动选择", "自动选择"]
+    },
+    {
+      "tag": "Google",
+      "type": "selector",
+      "outbounds": ["日本自动", "狮城自动", "香港自动", "美国自动", "手动选择", "自动选择"]
+    },
+    {
+      "tag": "Github",
+      "type": "selector",
+      "outbounds": ["日本自动", "狮城自动", "香港自动", "美国自动", "手动选择", "自动选择"]
+    },
+    {
+      "tag": "Telegram",
+      "type": "selector",
+      "outbounds": ["日本自动", "狮城自动", "香港自动", "美国自动", "手动选择", "自动选择"]
+    },
+    {
+      "tag": "TikTok",
+      "type": "selector",
+      "outbounds": ["日本自动", "狮城自动", "香港自动", "美国自动", "手动选择", "自动选择"]
+    },
+    {
+      "tag": "Netflix",
+      "type": "selector",
+      "outbounds": ["日本自动", "狮城自动", "香港自动", "美国自动", "手动选择", "自动选择"]
+    },
+    {
+      "tag": "Wallet",
+      "type": "selector",
+      "outbounds": ["日本自动", "狮城自动", "香港自动", "美国自动", "手动选择", "自动选择"]
+    },
+    {
+      "tag": "Steam",
+      "type": "selector",
+      "outbounds": ["日本自动", "狮城自动", "香港自动", "美国自动", "手动选择", "自动选择"]
+    },
+    {
+      "tag": "Microsoft",
+      "type": "selector",
+      "outbounds": ["日本自动", "狮城自动", "香港自动", "美国自动", "手动选择", "自动选择", "直连"]
+    },
+    {
+      "tag": "OneDrive",
+      "type": "selector",
+      "outbounds": ["日本自动", "狮城自动", "香港自动", "美国自动", "手动选择", "自动选择", "直连"]
+    },
+    {
+      "tag": "Apple",
+      "type": "selector",
+      "outbounds": ["日本自动", "狮城自动", "香港自动", "美国自动", "手动选择", "自动选择", "直连"]
+    },
+    {
+      "tag": "漏网之鱼",
+      "type": "selector",
+      "outbounds": ["默认代理", "日本自动", "狮城自动", "香港自动", "美国自动", "手动选择", "自动选择", "直连"]
+    },
+    {
+      "tag": "GLOBAL",
+      "type": "selector",
+      "outbounds": [
+        "默认代理",
+        "OpenAI",
+        "Gemini",
+        "Muse AI",
+        "AI",
+        "X",
+        "YouTube",
+        "Google",
+        "Github",
+        "Telegram",
+        "TikTok",
+        "Netflix",
+        "Wallet",
+        "Steam",
+        "Microsoft",
+        "OneDrive",
+        "Apple",
+        "漏网之鱼",
+        "日本自动",
+        "狮城自动",
+        "香港自动",
+        "美国自动",
+        "手动选择",
+        "自动选择",
+        "延迟辅助",
+        "直连"
+      ]
+    },
+    {
+      "tag": "直连",
+      "type": "direct",
+      "domain_resolver": "ali"
+    }
   ],
   "http_clients": [
     {"tag": "直连下载", "detour": "直连"}
@@ -65,6 +243,9 @@
       {"clash_mode": "Direct", "outbound": "直连"},
       {"clash_mode": "Global", "outbound": "GLOBAL"},
       {"rule_set": "geosite-private", "outbound": "直连"},
+      {"rule_set": "geosite-openai", "outbound": "OpenAI"},
+      {"rule_set": "geosite-gemini", "outbound": "Gemini"},
+      {"rule_set": "geosite-museai", "outbound": "Muse AI"},
       {"rule_set": "geosite-category-ai-!cn", "outbound": "AI"},
       {"rule_set": "geosite-youtube", "outbound": "YouTube"},
       {"rule_set": "geosite-google", "outbound": "Google"},
@@ -90,9 +271,9 @@
     ],
     "rule_set": [
       {"tag": ["fakeipfilter-cn", "fakeipfilter-!cn"], "type": "remote", "format": "source", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/main/rules/{tag}.json"},
-      {"tag": ["geosite-category-ai-!cn", "geosite-youtube", "geosite-google", "geosite-github", "geosite-onedrive", "geosite-microsoft", "geosite-microsoft@cn","geosite-apple", "geosite-apple@cn", "geosite-telegram", "geosite-tiktok", "geosite-netflix", "geosite-paypal", "geosite-binance", "geosite-okx", "geosite-category-cryptocurrency", "geosite-steam@cn", "geosite-steam", "geosite-geolocation-!cn", "geosite-cn", "geosite-private"], "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/{tag}.srs"},
+      {"tag": ["geosite-openai", "geosite-gemini", "geosite-museai", "geosite-category-ai-!cn", "geosite-youtube", "geosite-google", "geosite-github", "geosite-onedrive", "geosite-microsoft", "geosite-microsoft@cn","geosite-apple", "geosite-apple@cn", "geosite-telegram", "geosite-tiktok", "geosite-netflix", "geosite-paypal", "geosite-binance", "geosite-okx", "geosite-category-cryptocurrency", "geosite-steam@cn", "geosite-steam", "geosite-geolocation-!cn", "geosite-cn", "geosite-private"], "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/{tag}.srs"},
       {"tag": "geoip-telegram", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/telegram.srs"},
-      {"tag": "geoip-cn", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"}
+      {"tag": "geoip-cn", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/one-china.srs"}
     ],
     "final": "漏网之鱼",
     "default_http_client": "直连下载",
@@ -122,7 +303,7 @@
       "type": "api",
       "listen": "0.0.0.0",
       "listen_port": 9090,
-      "secret": "passwd",
+      "secret": "",
       "dashboard": {
         "enabled": true,
         "path": "/etc/sing-box/dashboard"
@@ -138,7 +319,7 @@
     "clash_api": {
       "external_controller": "0.0.0.0:9095",
       "external_ui": "/etc/sing-box/ui",
-      "secret": "passwd",
+      "secret": "",
       "default_mode": "Rule"
     }
   },
