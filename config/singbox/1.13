@@ -282,7 +282,7 @@
       "type": "api",
       "listen": "0.0.0.0",
       "listen_port": 9090,
-      "secret": "passwd",
+      "secret": "",
       "dashboard": {
         "enabled": true,
         "path": "/etc/sing-box/dashboard"
@@ -298,7 +298,7 @@
     "clash_api": {
       "external_controller": "0.0.0.0:9095",
       "external_ui": "/etc/sing-box/ui",
-      "secret": "passwd",
+      "secret": "",
       "default_mode": "Rule"
     }
   },
