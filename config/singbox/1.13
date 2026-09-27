@@ -1,3 +1,4 @@
+```json
 {
   "$schema": "https://sing-box.sagernet.org/schema.json",
   "dns": {
@@ -20,7 +21,7 @@
       {"query_type": ["A", "AAAA"], "server": "fakeip", "rewrite_ttl": 1}
     ],
     "final": "google",
-    "strategy": "ipv4_only", 
+    "strategy": "ipv4_only",
     "cache_capacity": 8192,
     "optimistic": {"enabled": true},
     "reverse_mapping": true
@@ -225,6 +226,15 @@
       {"clash_mode": "Direct", "outbound": "直连"},
       {"clash_mode": "Global", "outbound": "GLOBAL"},
       {"rule_set": "geosite-private", "outbound": "直连"},
+
+      {
+        "domain_suffix": [
+          "muse.ai",
+          "muse-ai.io"
+        ],
+        "outbound": "AI"
+      },
+
       {"rule_set": "geosite-category-ai-!cn", "outbound": "AI"},
       {"rule_set": "geosite-youtube", "outbound": "YouTube"},
       {"rule_set": "geosite-google", "outbound": "Google"},
@@ -315,3 +325,4 @@
     "timestamp": true
   }
 }
+```
