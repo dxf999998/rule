@@ -106,6 +106,21 @@
       "outbounds": ["日本自动", "狮城自动", "香港自动", "美国自动", "手动选择", "自动选择"]
     },
     {
+      "tag": "OpenAI",
+      "type": "selector",
+      "outbounds": ["日本自动", "狮城自动", "香港自动", "美国自动", "手动选择", "自动选择"]
+    },
+    {
+      "tag": "Gemini",
+      "type": "selector",
+      "outbounds": ["日本自动", "狮城自动", "香港自动", "美国自动", "手动选择", "自动选择"]
+    },
+    {
+      "tag": "Muse AI",
+      "type": "selector",
+      "outbounds": ["日本自动", "狮城自动", "香港自动", "美国自动", "手动选择", "自动选择"]
+    },
+    {
       "tag": "AI",
       "type": "selector",
       "outbounds": ["日本自动", "狮城自动", "香港自动", "美国自动", "手动选择", "自动选择"]
@@ -146,7 +161,7 @@
       "outbounds": ["日本自动", "狮城自动", "香港自动", "美国自动", "手动选择", "自动选择"]
     },
     {
-      "tag": "PayPal",
+      "tag": "Wallet",
       "type": "selector",
       "outbounds": ["日本自动", "狮城自动", "香港自动", "美国自动", "手动选择", "自动选择"]
     },
@@ -158,12 +173,12 @@
     {
       "tag": "Microsoft",
       "type": "selector",
-      "outbounds": ["日本自动", "直连", "狮城自动", "香港自动", "美国自动", "手动选择", "自动选择"]
+      "outbounds": ["日本自动", "狮城自动", "香港自动", "美国自动", "手动选择", "自动选择", "直连"]
     },
     {
       "tag": "OneDrive",
       "type": "selector",
-      "outbounds": ["日本自动", "直连", "狮城自动", "香港自动", "美国自动", "手动选择", "自动选择"]
+      "outbounds": ["日本自动", "狮城自动", "香港自动", "美国自动", "手动选择", "自动选择", "直连"]
     },
     {
       "tag": "Apple",
@@ -180,6 +195,9 @@
       "type": "selector",
       "outbounds": [
         "默认代理",
+        "OpenAI",
+        "Gemini",
+        "Muse AI",
         "AI",
         "X",
         "YouTube",
@@ -188,7 +206,7 @@
         "Telegram",
         "TikTok",
         "Netflix",
-        "PayPal",
+        "Wallet",
         "Steam",
         "Microsoft",
         "OneDrive",
@@ -225,6 +243,9 @@
       {"clash_mode": "Direct", "outbound": "直连"},
       {"clash_mode": "Global", "outbound": "GLOBAL"},
       {"rule_set": "geosite-private", "outbound": "直连"},
+      {"rule_set": "geosite-openai", "outbound": "OpenAI"},
+      {"rule_set": "geosite-gemini", "outbound": "Gemini"},
+      {"rule_set": "geosite-museai", "outbound": "Muse AI"},
       {"rule_set": "geosite-category-ai-!cn", "outbound": "AI"},
       {"rule_set": "geosite-youtube", "outbound": "YouTube"},
       {"rule_set": "geosite-google", "outbound": "Google"},
@@ -237,10 +258,10 @@
       {"rule_set": "geosite-telegram", "outbound": "Telegram"},
       {"rule_set": "geosite-tiktok", "outbound": "TikTok"},
       {"rule_set": "geosite-netflix", "outbound": "Netflix"},
-      {"rule_set": "geosite-paypal", "outbound": "PayPal"},
-      {"rule_set": "geosite-binance", "outbound": "PayPal"},
-      {"rule_set": "geosite-okx", "outbound": "PayPal"},
-      {"rule_set": "geosite-category-cryptocurrency", "outbound": "PayPal"},
+      {"rule_set": "geosite-paypal", "outbound": "Wallet"},
+      {"rule_set": "geosite-binance", "outbound": "Wallet"},
+      {"rule_set": "geosite-okx", "outbound": "Wallet"},
+      {"rule_set": "geosite-category-cryptocurrency", "outbound": "Wallet"},
       {"rule_set": "geosite-steam@cn", "outbound": "直连"},
       {"rule_set": "geosite-steam", "outbound": "Steam"},
       {"rule_set": "geosite-geolocation-!cn", "outbound": "默认代理"},
@@ -250,9 +271,9 @@
     ],
     "rule_set": [
       {"tag": ["fakeipfilter-cn", "fakeipfilter-!cn"], "type": "remote", "format": "source", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/main/rules/{tag}.json"},
-      {"tag": ["geosite-category-ai-!cn", "geosite-youtube", "geosite-google", "geosite-github", "geosite-onedrive", "geosite-microsoft", "geosite-microsoft@cn","geosite-apple", "geosite-apple@cn", "geosite-telegram", "geosite-tiktok", "geosite-netflix", "geosite-paypal", "geosite-binance", "geosite-okx", "geosite-category-cryptocurrency", "geosite-steam@cn", "geosite-steam", "geosite-geolocation-!cn", "geosite-cn", "geosite-private"], "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/{tag}.srs"},
+      {"tag": ["geosite-openai", "geosite-gemini", "geosite-museai", "geosite-category-ai-!cn", "geosite-youtube", "geosite-google", "geosite-github", "geosite-onedrive", "geosite-microsoft", "geosite-microsoft@cn","geosite-apple", "geosite-apple@cn", "geosite-telegram", "geosite-tiktok", "geosite-netflix", "geosite-paypal", "geosite-binance", "geosite-okx", "geosite-category-cryptocurrency", "geosite-steam@cn", "geosite-steam", "geosite-geolocation-!cn", "geosite-cn", "geosite-private"], "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/{tag}.srs"},
       {"tag": "geoip-telegram", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/telegram.srs"},
-      {"tag": "geoip-cn", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"}
+      {"tag": "geoip-cn", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/one-china.srs"}
     ],
     "final": "漏网之鱼",
     "default_http_client": "直连下载",
