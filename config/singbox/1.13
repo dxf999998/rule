@@ -38,12 +38,21 @@
         "domain_suffix": [
           "services.googleapis.cn",
           "googleapis.cn",
-          "xn--ngstr-lra8j.com"
+          "xn--ngstr-lra8j.com",
+          "muse.ai"
+        ],
+        "domain_keyword": [
+          "museai",
+          "muse"
         ],
         "server": "foreign"
       },
       {
         "rule_set": "geosite-google",
+        "server": "foreign"
+      },
+      {
+        "rule_set": "geosite-ai",
         "server": "foreign"
       },
       {
@@ -102,10 +111,10 @@
       "tag": "默认代理",
       "type": "selector",
       "outbounds": [
+        "美国自动",
         "日本自动",
         "狮城自动",
         "香港自动",
-        "美国自动",
         "手动选择",
         "自动选择"
       ]
@@ -114,11 +123,11 @@
       "tag": "Muse AI",
       "type": "selector",
       "outbounds": [
+        "美国自动",
+        "手动选择",
         "日本自动",
         "狮城自动",
         "香港自动",
-        "美国自动",
-        "手动选择",
         "自动选择"
       ]
     },
@@ -126,10 +135,10 @@
       "tag": "AI",
       "type": "selector",
       "outbounds": [
+        "美国自动",
         "日本自动",
         "狮城自动",
         "香港自动",
-        "美国自动",
         "手动选择",
         "自动选择"
       ]
@@ -497,10 +506,10 @@
         "OneDrive",
         "Apple",
         "漏网之鱼",
+        "美国自动",
         "日本自动",
         "狮城自动",
         "香港自动",
-        "美国自动",
         "手动选择",
         "自动选择",
         "延迟辅助",
@@ -586,7 +595,8 @@
           "muse.ai"
         ],
         "domain_keyword": [
-          "museai"
+          "museai",
+          "muse"
         ],
         "outbound": "Muse AI"
       },
