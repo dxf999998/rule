@@ -26,189 +26,29 @@
     "reverse_mapping": true
   },
   "outbounds": [
-    {
-      "tag": "日本自动",
-      "type": "urltest",
-      "outbounds": ["{all}"],
-      "filter": [
-        {"action": "include", "keywords": ["🇯🇵", "JP", "jp", "日本", "日", "Japan"]},
-        {"action": "exclude", "keywords": ["免费"]}
-      ],
-      "url": "https://clients1.google.com/generate_204",
-      "interval": "3m",
-      "tolerance": 30
-    },
-    {
-      "tag": "狮城自动",
-      "type": "urltest",
-      "outbounds": ["{all}"],
-      "filter": [
-        {"action": "include", "keywords": ["🇸🇬", "SG", "sg", "新加坡", "狮城", "Singapore"]},
-        {"action": "exclude", "keywords": ["免费"]}
-      ],
-      "url": "https://clients1.google.com/generate_204",
-      "interval": "3m",
-      "tolerance": 30
-    },
-    {
-      "tag": "香港自动",
-      "type": "urltest",
-      "outbounds": ["{all}"],
-      "filter": [
-        {"action": "include", "keywords": ["🇭🇰", "HK", "hk", "香港", "港", "HongKong"]},
-        {"action": "exclude", "keywords": ["免费"]}
-      ],
-      "url": "https://clients1.google.com/generate_204",
-      "interval": "3m",
-      "tolerance": 30
-    },
-    {
-      "tag": "美国自动",
-      "type": "urltest",
-      "outbounds": ["{all}"],
-      "filter": [
-        {"action": "include", "keywords": ["🇺🇸", "US", "us", "美国", "美", "United States"]},
-        {"action": "exclude", "keywords": ["AUS", "RUS", "免费"]}
-      ],
-      "url": "https://clients1.google.com/generate_204",
-      "interval": "3m",
-      "tolerance": 30
-    },
-    {
-      "tag": "手动选择",
-      "type": "selector",
-      "outbounds": ["{all}"],
-      "filter": [
-        {"action": "exclude", "keywords": ["官网", "到期时间", "剩余", "流量", "套餐", "免费", "订阅", "全球直连", "GB", "Expire Date", "Traffic", "ExpireDate"]}
-      ]
-    },
-    {
-      "tag": "自动选择",
-      "type": "urltest",
-      "outbounds": ["{all}"],
-      "filter": [
-        {"action": "exclude", "keywords": ["官网", "到期时间", "剩余", "流量", "套餐", "免费", "订阅", "全球直连", "GB", "Expire Date", "Traffic", "ExpireDate"]}
-      ],
-      "url": "https://clients1.google.com/generate_204",
-      "interval": "3m",
-      "tolerance": 30
-    },
-    {
-      "tag": "延迟辅助",
-      "type": "urltest",
-      "outbounds": ["直连"],
-      "url": "http://connect.rom.miui.com/generate_204",
-      "interval": "30m"
-    },
-    {
-      "tag": "默认代理",
-      "type": "selector",
-      "outbounds": ["日本自动", "狮城自动", "香港自动", "美国自动", "手动选择", "自动选择"]
-    },
-    {
-      "tag": "AI",
-      "type": "selector",
-      "outbounds": ["日本自动", "狮城自动", "香港自动", "美国自动", "手动选择", "自动选择"]
-    },
-    {
-      "tag": "X",
-      "type": "selector",
-      "outbounds": ["日本自动", "狮城自动", "香港自动", "美国自动", "手动选择", "自动选择"]
-    },
-    {
-      "tag": "YouTube",
-      "type": "selector",
-      "outbounds": ["日本自动", "狮城自动", "香港自动", "美国自动", "手动选择", "自动选择"]
-    },
-    {
-      "tag": "Google",
-      "type": "selector",
-      "outbounds": ["日本自动", "狮城自动", "香港自动", "美国自动", "手动选择", "自动选择"]
-    },
-    {
-      "tag": "Github",
-      "type": "selector",
-      "outbounds": ["日本自动", "狮城自动", "香港自动", "美国自动", "手动选择", "自动选择"]
-    },
-    {
-      "tag": "Telegram",
-      "type": "selector",
-      "outbounds": ["日本自动", "狮城自动", "香港自动", "美国自动", "手动选择", "自动选择"]
-    },
-    {
-      "tag": "TikTok",
-      "type": "selector",
-      "outbounds": ["日本自动", "狮城自动", "香港自动", "美国自动", "手动选择", "自动选择"]
-    },
-    {
-      "tag": "Netflix",
-      "type": "selector",
-      "outbounds": ["日本自动", "狮城自动", "香港自动", "美国自动", "手动选择", "自动选择"]
-    },
-    {
-      "tag": "PayPal",
-      "type": "selector",
-      "outbounds": ["日本自动", "狮城自动", "香港自动", "美国自动", "手动选择", "自动选择"]
-    },
-    {
-      "tag": "Steam",
-      "type": "selector",
-      "outbounds": ["日本自动", "狮城自动", "香港自动", "美国自动", "手动选择", "自动选择"]
-    },
-    {
-      "tag": "Microsoft",
-      "type": "selector",
-      "outbounds": ["日本自动", "直连", "狮城自动", "香港自动", "美国自动", "手动选择", "自动选择"]
-    },
-    {
-      "tag": "OneDrive",
-      "type": "selector",
-      "outbounds": ["日本自动", "直连", "狮城自动", "香港自动", "美国自动", "手动选择", "自动选择"]
-    },
-    {
-      "tag": "Apple",
-      "type": "selector",
-      "outbounds": ["日本自动", "狮城自动", "香港自动", "美国自动", "手动选择", "自动选择", "直连"]
-    },
-    {
-      "tag": "漏网之鱼",
-      "type": "selector",
-      "outbounds": ["默认代理", "日本自动", "狮城自动", "香港自动", "美国自动", "手动选择", "自动选择", "直连"]
-    },
-    {
-      "tag": "GLOBAL",
-      "type": "selector",
-      "outbounds": [
-        "默认代理",
-        "AI",
-        "X",
-        "YouTube",
-        "Google",
-        "Github",
-        "Telegram",
-        "TikTok",
-        "Netflix",
-        "PayPal",
-        "Steam",
-        "Microsoft",
-        "OneDrive",
-        "Apple",
-        "漏网之鱼",
-        "日本自动",
-        "狮城自动",
-        "香港自动",
-        "美国自动",
-        "手动选择",
-        "自动选择",
-        "延迟辅助",
-        "直连"
-      ]
-    },
-    {
-      "tag": "直连",
-      "type": "direct",
-      "domain_resolver": "ali"
-    }
+    {"tag": "默认代理", "type": "selector", "outbounds": ["日本手动", "狮城手动", "香港手动", "美国手动", "手动选择", "自动选择"]},
+    {"tag": "AI", "type": "selector", "outbounds": ["日本手动", "狮城手动", "香港手动", "美国手动", "手动选择", "自动选择"]},
+    {"tag": "YouTube", "type": "selector", "outbounds": ["日本手动", "狮城手动", "香港手动", "美国手动", "手动选择", "自动选择"]},
+    {"tag": "Google", "type": "selector", "outbounds": ["日本手动", "狮城手动", "香港手动", "美国手动", "手动选择", "自动选择"]},
+    {"tag": "Github", "type": "selector", "outbounds": ["日本手动", "狮城手动", "香港手动", "美国手动", "手动选择", "自动选择"]},
+    {"tag": "Telegram", "type": "selector", "outbounds": ["日本手动", "狮城手动", "香港手动", "美国手动", "手动选择", "自动选择"]},
+    {"tag": "TikTok", "type": "selector", "outbounds": ["日本手动", "狮城手动", "香港手动", "美国手动", "手动选择", "自动选择"]},
+    {"tag": "Netflix", "type": "selector", "outbounds": ["日本手动", "狮城手动", "香港手动", "美国手动", "手动选择", "自动选择"]},
+    {"tag": "Wallet", "type": "selector", "outbounds": ["日本手动", "狮城手动", "香港手动", "美国手动", "手动选择", "自动选择"]},
+    {"tag": "Steam", "type": "selector", "outbounds": ["日本手动", "狮城手动", "香港手动", "美国手动", "手动选择", "自动选择"]},
+    {"tag": "Microsoft", "type": "selector", "outbounds": ["日本手动", "狮城手动", "香港手动", "美国手动", "手动选择", "自动选择", "直连"]},
+    {"tag": "OneDrive", "type": "selector", "outbounds": ["日本手动", "狮城手动", "香港手动", "美国手动", "手动选择", "自动选择", "直连"]},
+    {"tag": "Apple", "type": "selector", "outbounds": ["日本手动", "狮城手动", "香港手动", "美国手动", "手动选择", "自动选择", "直连"]},
+    {"tag": "漏网之鱼", "type": "selector", "outbounds": ["默认代理", "日本手动", "狮城手动", "香港手动", "美国手动", "手动选择", "自动选择", "直连"]},
+    {"tag": "日本手动", "type": "selector", "outbounds": []},
+    {"tag": "狮城手动", "type": "selector", "outbounds": []},
+    {"tag": "香港手动", "type": "selector", "outbounds": []},
+    {"tag": "美国手动", "type": "selector", "outbounds": []},
+    {"tag": "手动选择", "type": "selector", "outbounds": []},
+    {"tag": "自动选择", "type": "urltest", "outbounds": [], "url": "https://clients1.google.com/generate_204", "interval": "30m", "tolerance": 100},
+    {"tag": "延迟辅助", "type": "urltest", "outbounds": ["直连"], "url": "http://connect.rom.miui.com/generate_204", "interval": "30m"},
+    {"tag": "GLOBAL", "type": "selector", "outbounds": ["默认代理", "AI", "YouTube", "Google", "Github", "Telegram", "TikTok", "Netflix", "Wallet", "Steam", "Microsoft", "OneDrive", "Apple", "漏网之鱼", "日本手动", "狮城手动", "香港手动", "美国手动", "手动选择", "自动选择", "延迟辅助", "直连"]},
+    {"tag": "直连", "type": "direct", "domain_resolver": "ali"}
   ],
   "http_clients": [
     {"tag": "直连下载", "detour": "直连"}
@@ -237,10 +77,10 @@
       {"rule_set": "geosite-telegram", "outbound": "Telegram"},
       {"rule_set": "geosite-tiktok", "outbound": "TikTok"},
       {"rule_set": "geosite-netflix", "outbound": "Netflix"},
-      {"rule_set": "geosite-paypal", "outbound": "PayPal"},
-      {"rule_set": "geosite-binance", "outbound": "PayPal"},
-      {"rule_set": "geosite-okx", "outbound": "PayPal"},
-      {"rule_set": "geosite-category-cryptocurrency", "outbound": "PayPal"},
+      {"rule_set": "geosite-paypal", "outbound": "Wallet"},
+      {"rule_set": "geosite-binance", "outbound": "Wallet"},
+      {"rule_set": "geosite-okx", "outbound": "Wallet"},
+      {"rule_set": "geosite-category-cryptocurrency", "outbound": "Wallet"},
       {"rule_set": "geosite-steam@cn", "outbound": "直连"},
       {"rule_set": "geosite-steam", "outbound": "Steam"},
       {"rule_set": "geosite-geolocation-!cn", "outbound": "默认代理"},
@@ -282,7 +122,7 @@
       "type": "api",
       "listen": "0.0.0.0",
       "listen_port": 9090,
-      "secret": "",
+      "secret": "passwd",
       "dashboard": {
         "enabled": true,
         "path": "/etc/sing-box/dashboard"
@@ -298,7 +138,7 @@
     "clash_api": {
       "external_controller": "0.0.0.0:9095",
       "external_ui": "/etc/sing-box/ui",
-      "secret": "",
+      "secret": "passwd",
       "default_mode": "Rule"
     }
   },
