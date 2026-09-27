@@ -111,6 +111,18 @@
       ]
     },
     {
+      "tag": "Muse AI",
+      "type": "selector",
+      "outbounds": [
+        "日本自动",
+        "狮城自动",
+        "香港自动",
+        "美国自动",
+        "手动选择",
+        "自动选择"
+      ]
+    },
+    {
       "tag": "AI",
       "type": "selector",
       "outbounds": [
@@ -470,6 +482,7 @@
       "type": "selector",
       "outbounds": [
         "默认代理",
+        "Muse AI",
         "AI",
         "X",
         "YouTube",
@@ -567,6 +580,15 @@
       {
         "clash_mode": "Global",
         "outbound": "GLOBAL"
+      },
+      {
+        "domain_suffix": [
+          "muse.ai"
+        ],
+        "domain_keyword": [
+          "museai"
+        ],
+        "outbound": "Muse AI"
       },
       {
         "domain_suffix": [
@@ -852,4 +874,3 @@
     }
   }
 }
-
