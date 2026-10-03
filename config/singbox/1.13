@@ -59,11 +59,11 @@
         {"action": "exclude", "keywords": ["免费"]}
       ],
       "url": "https://clients1.google.com/generate_204",
-      "interval": "3m",
+      "interval": "30m",
       "tolerance": 30
     },
     {
-      "tag": "香港自动30分", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["🇭🇰", "HK", "hk", "香港", "港", "HongKong"]}, {"action": "exclude", "keywords": ["免费"]}], "url": "https://clients1.google.com/generate_204", "interval": "30m", "tolerance": 30}, {"tag": "美国自动",
+      "tag": "美国自动",
       "type": "urltest",
       "outbounds": ["{all}"],
       "filter": [
