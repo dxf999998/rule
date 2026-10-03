@@ -59,7 +59,7 @@
         {"action": "exclude", "keywords": ["免费"]}
       ],
       "url": "https://clients1.google.com/generate_204",
-      "interval": "30m",
+      "interval": "5m",
       "tolerance": 30
     },
     {
