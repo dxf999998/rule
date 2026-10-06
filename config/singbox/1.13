@@ -524,6 +524,12 @@
   "route": {
     "rules": [
       {
+        "source_ip_cidr": [
+          "10.0.0.6/32"
+        ],
+        "outbound": "直连"
+      },
+      {
         "domain_suffix": [
           "baidubaidu.win"
         ],
