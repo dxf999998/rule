@@ -320,6 +320,18 @@
       ]
     },
     {
+      "tag": "Hark",
+      "type": "selector",
+      "outbounds": [
+        "日本自动",
+        "狮城自动",
+        "香港自动",
+        "美国自动",
+        "手动选择",
+        "自动选择"
+      ]
+    },
+    {
       "tag": "X",
       "type": "selector",
       "outbounds": [
@@ -648,6 +660,12 @@
       {
         "rule_set": "geosite-category-ai-!cn",
         "outbound": "AI"
+      },
+      {
+        "domain_suffix": [
+          "hark.com"
+        ],
+        "outbound": "Hark"
       },
       {
         "rule_set": "geosite-youtube",
