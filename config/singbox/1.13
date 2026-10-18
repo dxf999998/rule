@@ -1,1 +1,878 @@
-ewogICIkc2NoZW1hIjogImh0dHBzOi8vc2luZy1ib3guc2FnZXJuZXQub3JnL3NjaGVtYS5qc29uIiwKICAiZG5zIjogewogICAgInNlcnZlcnMiOiBbCiAgICAgIHsKICAgICAgICAidGFnIjogImxvY2FsIiwKICAgICAgICAidHlwZSI6ICJsb2NhbCIsCiAgICAgICAgInByZWZlcl9nbyI6IHRydWUKICAgICAgfSwKICAgICAgewogICAgICAgICJ0YWciOiAiYWxpIiwKICAgICAgICAidHlwZSI6ICJodHRwcyIsCiAgICAgICAgInNlcnZlciI6ICIyMjMuNS41LjUiCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAidGFnIjogInR4IiwKICAgICAgICAidHlwZSI6ICJodHRwcyIsCiAgICAgICAgInNlcnZlciI6ICJkb2gucHViIiwKICAgICAgICAiZG9tYWluX3Jlc29sdmVyIjogImhvc3RzIgogICAgICB9LAogICAgICB7CiAgICAgICAgInRhZyI6ICJnb29nbGUiLAogICAgICAgICJ0eXBlIjogImh0dHBzIiwKICAgICAgICAic2VydmVyIjogIjguOC44LjgiLAogICAgICAgICJkZXRvdXIiOiAi6buY6K6k5Luj55CGIgogICAgICB9LAogICAgICB7CiAgICAgICAgInRhZyI6ICJmYWtlaXAiLAogICAgICAgICJ0eXBlIjogImZha2VpcCIsCiAgICAgICAgImluZXQ0X3JhbmdlIjogIjE5OC4xOS4wLjAvMTYiCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAidHlwZSI6ICJob3N0cyIsCiAgICAgICAgInRhZyI6ICJob3N0cyIsCiAgICAgICAgInByZWRlZmluZWQiOiB7CiAgICAgICAgICAiZG9oLnB1YiI6IFsKICAgICAgICAgICAgIjEuMTIuMTIuMjEiLAogICAgICAgICAgICAiMTIwLjUzLjUzLjUzIgogICAgICAgICAgXQogICAgICAgIH0KICAgICAgfQogICAgXSwKICAgICJydWxlcyI6IFsKICAgICAgewogICAgICAgICJxdWVyeV90eXBlIjogWwogICAgICAgICAgIkhUVFBTIiwKICAgICAgICAgICJTVkNCIgogICAgICAgIF0sCiAgICAgICAgImFjdGlvbiI6ICJyZWplY3QiCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAiY2xhc2hfbW9kZSI6ICJEaXJlY3QiLAogICAgICAgICJzZXJ2ZXIiOiAiYWxpIgogICAgICB9LAogICAgICB7CiAgICAgICAgImNsYXNoX21vZGUiOiAiR2xvYmFsIiwKICAgICAgICAic2VydmVyIjogImZha2VpcCIKICAgICAgfSwKICAgICAgewogICAgICAgICJydWxlX3NldCI6IFsKICAgICAgICAgICJmYWtlaXBmaWx0ZXItY24iLAogICAgICAgICAgImdlb3NpdGUtY24iLAogICAgICAgICAgImdlb3NpdGUtbWljcm9zb2Z0QGNuIiwKICAgICAgICAgICJnZW9zaXRlLWFwcGxlQGNuIiwKICAgICAgICAgICJnZW9zaXRlLXByaXZhdGUiCiAgICAgICAgXSwKICAgICAgICAic2VydmVyIjogImFsaSIKICAgICAgfSwKICAgICAgewogICAgICAgICJydWxlX3NldCI6ICJmYWtlaXBmaWx0ZXItIWNuIiwKICAgICAgICAic2VydmVyIjogImdvb2dsZSIKICAgICAgfSwKICAgICAgewogICAgICAgICJ0eXBlIjogImxvZ2ljYWwiLAogICAgICAgICJtb2RlIjogImFuZCIsCiAgICAgICAgInJ1bGVzIjogWwogICAgICAgICAgewogICAgICAgICAgICAicXVlcnlfdHlwZSI6IFsKICAgICAgICAgICAgICAiQSIsCiAgICAgICAgICAgICAgIkFBQUEiCiAgICAgICAgICAgIF0KICAgICAgICAgIH0sCiAgICAgICAgICB7CiAgICAgICAgICAgICJydWxlX3NldCI6ICJnZW9zaXRlLWdlb2xvY2F0aW9uLSFjbiIsCiAgICAgICAgICAgICJpbnZlcnQiOiB0cnVlCiAgICAgICAgICB9CiAgICAgICAgXSwKICAgICAgICAiYWN0aW9uIjogImV2YWx1YXRlIiwKICAgICAgICAic2VydmVyIjogImdvb2dsZSIsCiAgICAgICAgImNsaWVudF9zdWJuZXQiOiAiMjIzLjUuNS4wLzI0IiwKICAgICAgICAidGltZW91dCI6ICIycyIKICAgICAgfSwKICAgICAgewogICAgICAgICJtYXRjaF9yZXNwb25zZSI6IHRydWUsCiAgICAgICAgInJ1bGVfc2V0IjogImdlb2lwLWNuIiwKICAgICAgICAic2VydmVyIjogImFsaSIKICAgICAgfSwKICAgICAgewogICAgICAgICJxdWVyeV90eXBlIjogWwogICAgICAgICAgIkEiLAogICAgICAgICAgIkFBQUEiCiAgICAgICAgXSwKICAgICAgICAic2VydmVyIjogImZha2VpcCIsCiAgICAgICAgInJld3JpdGVfdHRsIjogMQogICAgICB9CiAgICBdLAogICAgImZpbmFsIjogImdvb2dsZSIsCiAgICAic3RyYXRlZ3kiOiAiaXB2NF9vbmx5IiwKICAgICJjYWNoZV9jYXBhY2l0eSI6IDgxOTIsCiAgICAib3B0aW1pc3RpYyI6IHsKICAgICAgImVuYWJsZWQiOiB0cnVlCiAgICB9LAogICAgInJldmVyc2VfbWFwcGluZyI6IHRydWUKICB9LAogICJvdXRib3VuZHMiOiBbCiAgICB7CiAgICAgICJ0YWciOiAi5pel5pys6Ieq5YqoIiwKICAgICAgInR5cGUiOiAidXJsdGVzdCIsCiAgICAgICJvdXRib3VuZHMiOiBbCiAgICAgICAgInthbGx9IgogICAgICBdLAogICAgICAiZmlsdGVyIjogWwogICAgICAgIHsKICAgICAgICAgICJhY3Rpb24iOiAiaW5jbHVkZSIsCiAgICAgICAgICAia2V5d29yZHMiOiBbCiAgICAgICAgICAgICLwn4ev8J+HtSIsCiAgICAgICAgICAgICJKUCIsCiAgICAgICAgICAgICJqcCIsCiAgICAgICAgICAgICLml6XmnKwiLAogICAgICAgICAgICAi5pelIiwKICAgICAgICAgICAgIkphcGFuIgogICAgICAgICAgXQogICAgICAgIH0sCiAgICAgICAgewogICAgICAgICAgImFjdGlvbiI6ICJleGNsdWRlIiwKICAgICAgICAgICJrZXl3b3JkcyI6IFsKICAgICAgICAgICAgIuWFjei0uSIKICAgICAgICAgIF0KICAgICAgICB9CiAgICAgIF0sCiAgICAgICJ1cmwiOiAiaHR0cHM6Ly9jbGllbnRzMS5nb29nbGUuY29tL2dlbmVyYXRlXzIwNCIsCiAgICAgICJpbnRlcnZhbCI6ICIzbSIsCiAgICAgICJ0b2xlcmFuY2UiOiAzMAogICAgfSwKICAgIHsKICAgICAgInRhZyI6ICLni67ln47oh6rliqgiLAogICAgICAidHlwZSI6ICJ1cmx0ZXN0IiwKICAgICAgIm91dGJvdW5kcyI6IFsKICAgICAgICAie2FsbH0iCiAgICAgIF0sCiAgICAgICJmaWx0ZXIiOiBbCiAgICAgICAgewogICAgICAgICAgImFjdGlvbiI6ICJpbmNsdWRlIiwKICAgICAgICAgICJrZXl3b3JkcyI6IFsKICAgICAgICAgICAgIvCfh7jwn4esIiwKICAgICAgICAgICAgIlNHIiwKICAgICAgICAgICAgInNnIiwKICAgICAgICAgICAgIuaWsOWKoOWdoSIsCiAgICAgICAgICAgICLni67ln44iLAogICAgICAgICAgICAiU2luZ2Fwb3JlIgogICAgICAgICAgXQogICAgICAgIH0sCiAgICAgICAgewogICAgICAgICAgImFjdGlvbiI6ICJleGNsdWRlIiwKICAgICAgICAgICJrZXl3b3JkcyI6IFsKICAgICAgICAgICAgIuWFjei0uSIKICAgICAgICAgIF0KICAgICAgICB9CiAgICAgIF0sCiAgICAgICJ1cmwiOiAiaHR0cHM6Ly9jbGllbnRzMS5nb29nbGUuY29tL2dlbmVyYXRlXzIwNCIsCiAgICAgICJpbnRlcnZhbCI6ICIzbSIsCiAgICAgICJ0b2xlcmFuY2UiOiAzMAogICAgfSwKICAgIHsKICAgICAgInRhZyI6ICLpppnmuK/oh6rliqgiLAogICAgICAidHlwZSI6ICJ1cmx0ZXN0IiwKICAgICAgIm91dGJvdW5kcyI6IFsKICAgICAgICAie2FsbH0iCiAgICAgIF0sCiAgICAgICJmaWx0ZXIiOiBbCiAgICAgICAgewogICAgICAgICAgImFjdGlvbiI6ICJpbmNsdWRlIiwKICAgICAgICAgICJrZXl3b3JkcyI6IFsKICAgICAgICAgICAgIvCfh63wn4ewIiwKICAgICAgICAgICAgIkhLIiwKICAgICAgICAgICAgImhrIiwKICAgICAgICAgICAgIummmea4ryIsCiAgICAgICAgICAgICLmuK8iLAogICAgICAgICAgICAiSG9uZ0tvbmciCiAgICAgICAgICBdCiAgICAgICAgfSwKICAgICAgICB7CiAgICAgICAgICAiYWN0aW9uIjogImV4Y2x1ZGUiLAogICAgICAgICAgImtleXdvcmRzIjogWwogICAgICAgICAgICAi5YWN6LS5IgogICAgICAgICAgXQogICAgICAgIH0KICAgICAgXSwKICAgICAgInVybCI6ICJodHRwczovL2NsaWVudHMxLmdvb2dsZS5jb20vZ2VuZXJhdGVfMjA0IiwKICAgICAgImludGVydmFsIjogIjVtIiwKICAgICAgInRvbGVyYW5jZSI6IDMwCiAgICB9LAogICAgewogICAgICAidGFnIjogIue+juWbveiHquWKqCIsCiAgICAgICJ0eXBlIjogInVybHRlc3QiLAogICAgICAib3V0Ym91bmRzIjogWwogICAgICAgICJ7YWxsfSIKICAgICAgXSwKICAgICAgImZpbHRlciI6IFsKICAgICAgICB7CiAgICAgICAgICAiYWN0aW9uIjogImluY2x1ZGUiLAogICAgICAgICAgImtleXdvcmRzIjogWwogICAgICAgICAgICAi8J+HuvCfh7giLAogICAgICAgICAgICAiVVMiLAogICAgICAgICAgICAidXMiLAogICAgICAgICAgICAi576O5Zu9IiwKICAgICAgICAgICAgIue+jiIsCiAgICAgICAgICAgICJVbml0ZWQgU3RhdGVzIgogICAgICAgICAgXQogICAgICAgIH0sCiAgICAgICAgewogICAgICAgICAgImFjdGlvbiI6ICJleGNsdWRlIiwKICAgICAgICAgICJrZXl3b3JkcyI6IFsKICAgICAgICAgICAgIkFVUyIsCiAgICAgICAgICAgICJSVVMiLAogICAgICAgICAgICAi5YWN6LS5IgogICAgICAgICAgXQogICAgICAgIH0KICAgICAgXSwKICAgICAgInVybCI6ICJodHRwczovL2NsaWVudHMxLmdvb2dsZS5jb20vZ2VuZXJhdGVfMjA0IiwKICAgICAgImludGVydmFsIjogIjNtIiwKICAgICAgInRvbGVyYW5jZSI6IDMwCiAgICB9LAogICAgewogICAgICAidGFnIjogIuaJi+WKqOmAieaLqSIsCiAgICAgICJ0eXBlIjogInNlbGVjdG9yIiwKICAgICAgIm91dGJvdW5kcyI6IFsKICAgICAgICAie2FsbH0iCiAgICAgIF0sCiAgICAgICJmaWx0ZXIiOiBbCiAgICAgICAgewogICAgICAgICAgImFjdGlvbiI6ICJleGNsdWRlIiwKICAgICAgICAgICJrZXl3b3JkcyI6IFsKICAgICAgICAgICAgIuWumOe9kSIsCiAgICAgICAgICAgICLliLDmnJ/ml7bpl7QiLAogICAgICAgICAgICAi5Ymp5L2ZIiwKICAgICAgICAgICAgIua1gemHjyIsCiAgICAgICAgICAgICLlpZfppJAiLAogICAgICAgICAgICAi5YWN6LS5IiwKICAgICAgICAgICAgIuiuoumYhSIsCiAgICAgICAgICAgICLlhajnkIPnm7Tov54iLAogICAgICAgICAgICAiR0IiLAogICAgICAgICAgICAiRXhwaXJlIERhdGUiLAogICAgICAgICAgICAiVHJhZmZpYyIsCiAgICAgICAgICAgICJFeHBpcmVEYXRlIgogICAgICAgICAgXQogICAgICAgIH0KICAgICAgXQogICAgfSwKICAgIHsKICAgICAgInRhZyI6ICLoh6rliqjpgInmi6kiLAogICAgICAidHlwZSI6ICJ1cmx0ZXN0IiwKICAgICAgIm91dGJvdW5kcyI6IFsKICAgICAgICAie2FsbH0iCiAgICAgIF0sCiAgICAgICJmaWx0ZXIiOiBbCiAgICAgICAgewogICAgICAgICAgImFjdGlvbiI6ICJleGNsdWRlIiwKICAgICAgICAgICJrZXl3b3JkcyI6IFsKICAgICAgICAgICAgIuWumOe9kSIsCiAgICAgICAgICAgICLliLDmnJ/ml7bpl7QiLAogICAgICAgICAgICAi5Ymp5L2ZIiwKICAgICAgICAgICAgIua1gemHjyIsCiAgICAgICAgICAgICLlpZfppJAiLAogICAgICAgICAgICAi5YWN6LS5IiwKICAgICAgICAgICAgIuiuoumYhSIsCiAgICAgICAgICAgICLlhajnkIPnm7Tov54iLAogICAgICAgICAgICAiR0IiLAogICAgICAgICAgICAiRXhwaXJlIERhdGUiLAogICAgICAgICAgICAiVHJhZmZpYyIsCiAgICAgICAgICAgICJFeHBpcmVEYXRlIgogICAgICAgICAgXQogICAgICAgIH0KICAgICAgXSwKICAgICAgInVybCI6ICJodHRwczovL2NsaWVudHMxLmdvb2dsZS5jb20vZ2VuZXJhdGVfMjA0IiwKICAgICAgImludGVydmFsIjogIjNtIiwKICAgICAgInRvbGVyYW5jZSI6IDMwCiAgICB9LAogICAgewogICAgICAidGFnIjogIuW7tui/n+i+heWKqSIsCiAgICAgICJ0eXBlIjogInVybHRlc3QiLAogICAgICAib3V0Ym91bmRzIjogWwogICAgICAgICLnm7Tov54iCiAgICAgIF0sCiAgICAgICJ1cmwiOiAiaHR0cDovL2Nvbm5lY3Qucm9tLm1pdWkuY29tL2dlbmVyYXRlXzIwNCIsCiAgICAgICJpbnRlcnZhbCI6ICIzMG0iCiAgICB9LAogICAgewogICAgICAidGFnIjogIum7mOiupOS7o+eQhiIsCiAgICAgICJ0eXBlIjogInNlbGVjdG9yIiwKICAgICAgIm91dGJvdW5kcyI6IFsKICAgICAgICAi5pel5pys6Ieq5YqoIiwKICAgICAgICAi54uu5Z+O6Ieq5YqoIiwKICAgICAgICAi6aaZ5riv6Ieq5YqoIiwKICAgICAgICAi576O5Zu96Ieq5YqoIiwKICAgICAgICAi5omL5Yqo6YCJ5oupIiwKICAgICAgICAi6Ieq5Yqo6YCJ5oupIgogICAgICBdCiAgICB9LAogICAgewogICAgICAidGFnIjogIkFJIiwKICAgICAgInR5cGUiOiAic2VsZWN0b3IiLAogICAgICAib3V0Ym91bmRzIjogWwogICAgICAgICLml6XmnKzoh6rliqgiLAogICAgICAgICLni67ln47oh6rliqgiLAogICAgICAgICLpppnmuK/oh6rliqgiLAogICAgICAgICLnvo7lm73oh6rliqgiLAogICAgICAgICLmiYvliqjpgInmi6kiLAogICAgICAgICLoh6rliqjpgInmi6kiCiAgICAgIF0KICAgIH0sCiAgICB7CiAgICAgICJ0YWciOiAiSGFyayIsCiAgICAgICJ0eXBlIjogInNlbGVjdG9yIiwKICAgICAgIm91dGJvdW5kcyI6IFsKICAgICAgICAi5pel5pys6Ieq5YqoIiwKICAgICAgICAi54uu5Z+O6Ieq5YqoIiwKICAgICAgICAi6aaZ5riv6Ieq5YqoIiwKICAgICAgICAi576O5Zu96Ieq5YqoIiwKICAgICAgICAi5omL5Yqo6YCJ5oupIiwKICAgICAgICAi6Ieq5Yqo6YCJ5oupIgogICAgICBdCiAgICB9LAogICAgewogICAgICAidGFnIjogIlgiLAogICAgICAidHlwZSI6ICJzZWxlY3RvciIsCiAgICAgICJvdXRib3VuZHMiOiBbCiAgICAgICAgIuaXpeacrOiHquWKqCIsCiAgICAgICAgIueLruWfjuiHquWKqCIsCiAgICAgICAgIummmea4r+iHquWKqCIsCiAgICAgICAgIue+juWbveiHquWKqCIsCiAgICAgICAgIuaJi+WKqOmAieaLqSIsCiAgICAgICAgIuiHquWKqOmAieaLqSIKICAgICAgXQogICAgfSwKICAgIHsKICAgICAgInRhZyI6ICJZb3VUdWJlIiwKICAgICAgInR5cGUiOiAic2VsZWN0b3IiLAogICAgICAib3V0Ym91bmRzIjogWwogICAgICAgICLml6XmnKzoh6rliqgiLAogICAgICAgICLni67ln47oh6rliqgiLAogICAgICAgICLpppnmuK/oh6rliqgiLAogICAgICAgICLnvo7lm73oh6rliqgiLAogICAgICAgICLmiYvliqjpgInmi6kiLAogICAgICAgICLoh6rliqjpgInmi6kiCiAgICAgIF0KICAgIH0sCiAgICB7CiAgICAgICJ0YWciOiAiR29vZ2xlIiwKICAgICAgInR5cGUiOiAic2VsZWN0b3IiLAogICAgICAib3V0Ym91bmRzIjogWwogICAgICAgICLml6XmnKzoh6rliqgiLAogICAgICAgICLni67ln47oh6rliqgiLAogICAgICAgICLpppnmuK/oh6rliqgiLAogICAgICAgICLnvo7lm73oh6rliqgiLAogICAgICAgICLmiYvliqjpgInmi6kiLAogICAgICAgICLoh6rliqjpgInmi6kiCiAgICAgIF0KICAgIH0sCiAgICB7CiAgICAgICJ0YWciOiAiR2l0aHViIiwKICAgICAgInR5cGUiOiAic2VsZWN0b3IiLAogICAgICAib3V0Ym91bmRzIjogWwogICAgICAgICLml6XmnKzoh6rliqgiLAogICAgICAgICLni67ln47oh6rliqgiLAogICAgICAgICLpppnmuK/oh6rliqgiLAogICAgICAgICLnvo7lm73oh6rliqgiLAogICAgICAgICLmiYvliqjpgInmi6kiLAogICAgICAgICLoh6rliqjpgInmi6kiCiAgICAgIF0KICAgIH0sCiAgICB7CiAgICAgICJ0YWciOiAiVGVsZWdyYW0iLAogICAgICAidHlwZSI6ICJzZWxlY3RvciIsCiAgICAgICJvdXRib3VuZHMiOiBbCiAgICAgICAgIuaXpeacrOiHquWKqCIsCiAgICAgICAgIueLruWfjuiHquWKqCIsCiAgICAgICAgIummmea4r+iHquWKqCIsCiAgICAgICAgIue+juWbveiHquWKqCIsCiAgICAgICAgIuaJi+WKqOmAieaLqSIsCiAgICAgICAgIuiHquWKqOmAieaLqSIKICAgICAgXQogICAgfSwKICAgIHsKICAgICAgInRhZyI6ICJUaWtUb2siLAogICAgICAidHlwZSI6ICJzZWxlY3RvciIsCiAgICAgICJvdXRib3VuZHMiOiBbCiAgICAgICAgIuaXpeacrOiHquWKqCIsCiAgICAgICAgIueLruWfjuiHquWKqCIsCiAgICAgICAgIummmea4r+iHquWKqCIsCiAgICAgICAgIue+juWbveiHquWKqCIsCiAgICAgICAgIuaJi+WKqOmAieaLqSIsCiAgICAgICAgIuiHquWKqOmAieaLqSIKICAgICAgXQogICAgfSwKICAgIHsKICAgICAgInRhZyI6ICJOZXRmbGl4IiwKICAgICAgInR5cGUiOiAic2VsZWN0b3IiLAogICAgICAib3V0Ym91bmRzIjogWwogICAgICAgICLml6XmnKzoh6rliqgiLAogICAgICAgICLni67ln47oh6rliqgiLAogICAgICAgICLpppnmuK/oh6rliqgiLAogICAgICAgICLnvo7lm73oh6rliqgiLAogICAgICAgICLmiYvliqjpgInmi6kiLAogICAgICAgICLoh6rliqjpgInmi6kiCiAgICAgIF0KICAgIH0sCiAgICB7CiAgICAgICJ0YWciOiAiUGF5UGFsIiwKICAgICAgInR5cGUiOiAic2VsZWN0b3IiLAogICAgICAib3V0Ym91bmRzIjogWwogICAgICAgICLml6XmnKzoh6rliqgiLAogICAgICAgICLni67ln47oh6rliqgiLAogICAgICAgICLpppnmuK/oh6rliqgiLAogICAgICAgICLnvo7lm73oh6rliqgiLAogICAgICAgICLmiYvliqjpgInmi6kiLAogICAgICAgICLoh6rliqjpgInmi6kiCiAgICAgIF0KICAgIH0sCiAgICB7CiAgICAgICJ0YWciOiAiU3RlYW0iLAogICAgICAidHlwZSI6ICJzZWxlY3RvciIsCiAgICAgICJvdXRib3VuZHMiOiBbCiAgICAgICAgIuaXpeacrOiHquWKqCIsCiAgICAgICAgIueLruWfjuiHquWKqCIsCiAgICAgICAgIummmea4r+iHquWKqCIsCiAgICAgICAgIue+juWbveiHquWKqCIsCiAgICAgICAgIuaJi+WKqOmAieaLqSIsCiAgICAgICAgIuiHquWKqOmAieaLqSIKICAgICAgXQogICAgfSwKICAgIHsKICAgICAgInRhZyI6ICJNaWNyb3NvZnQiLAogICAgICAidHlwZSI6ICJzZWxlY3RvciIsCiAgICAgICJvdXRib3VuZHMiOiBbCiAgICAgICAgIuaXpeacrOiHquWKqCIsCiAgICAgICAgIuebtOi/niIsCiAgICAgICAgIueLruWfjuiHquWKqCIsCiAgICAgICAgIummmea4r+iHquWKqCIsCiAgICAgICAgIue+juWbveiHquWKqCIsCiAgICAgICAgIuaJi+WKqOmAieaLqSIsCiAgICAgICAgIuiHquWKqOmAieaLqSIKICAgICAgXQogICAgfSwKICAgIHsKICAgICAgInRhZyI6ICJPbmVEcml2ZSIsCiAgICAgICJ0eXBlIjogInNlbGVjdG9yIiwKICAgICAgIm91dGJvdW5kcyI6IFsKICAgICAgICAi5pel5pys6Ieq5YqoIiwKICAgICAgICAi55u06L+eIiwKICAgICAgICAi54uu5Z+O6Ieq5YqoIiwKICAgICAgICAi6aaZ5riv6Ieq5YqoIiwKICAgICAgICAi576O5Zu96Ieq5YqoIiwKICAgICAgICAi5omL5Yqo6YCJ5oupIiwKICAgICAgICAi6Ieq5Yqo6YCJ5oupIgogICAgICBdCiAgICB9LAogICAgewogICAgICAidGFnIjogIkFwcGxlIiwKICAgICAgInR5cGUiOiAic2VsZWN0b3IiLAogICAgICAib3V0Ym91bmRzIjogWwogICAgICAgICLml6XmnKzoh6rliqgiLAogICAgICAgICLni67ln47oh6rliqgiLAogICAgICAgICLpppnmuK/oh6rliqgiLAogICAgICAgICLnvo7lm73oh6rliqgiLAogICAgICAgICLmiYvliqjpgInmi6kiLAogICAgICAgICLoh6rliqjpgInmi6kiLAogICAgICAgICLnm7Tov54iCiAgICAgIF0KICAgIH0sCiAgICB7CiAgICAgICJ0YWciOiAi5ryP572R5LmL6bG8IiwKICAgICAgInR5cGUiOiAic2VsZWN0b3IiLAogICAgICAib3V0Ym91bmRzIjogWwogICAgICAgICLpu5jorqTku6PnkIYiLAogICAgICAgICLml6XmnKzoh6rliqgiLAogICAgICAgICLni67ln47oh6rliqgiLAogICAgICAgICLpppnmuK/oh6rliqgiLAogICAgICAgICLnvo7lm73oh6rliqgiLAogICAgICAgICLmiYvliqjpgInmi6kiLAogICAgICAgICLoh6rliqjpgInmi6kiLAogICAgICAgICLnm7Tov54iCiAgICAgIF0KICAgIH0sCiAgICB7CiAgICAgICJ0YWciOiAiR0xPQkFMIiwKICAgICAgInR5cGUiOiAic2VsZWN0b3IiLAogICAgICAib3V0Ym91bmRzIjogWwogICAgICAgICLpu5jorqTku6PnkIYiLAogICAgICAgICJBSSIsCiAgICAgICAgIlgiLAogICAgICAgICJZb3VUdWJlIiwKICAgICAgICAiR29vZ2xlIiwKICAgICAgICAiR2l0aHViIiwKICAgICAgICAiVGVsZWdyYW0iLAogICAgICAgICJUaWtUb2siLAogICAgICAgICJOZXRmbGl4IiwKICAgICAgICAiUGF5UGFsIiwKICAgICAgICAiU3RlYW0iLAogICAgICAgICJNaWNyb3NvZnQiLAogICAgICAgICJPbmVEcml2ZSIsCiAgICAgICAgIkFwcGxlIiwKICAgICAgICAi5ryP572R5LmL6bG8IiwKICAgICAgICAi5pel5pys6Ieq5YqoIiwKICAgICAgICAi54uu5Z+O6Ieq5YqoIiwKICAgICAgICAi6aaZ5riv6Ieq5YqoIiwKICAgICAgICAi576O5Zu96Ieq5YqoIiwKICAgICAgICAi5omL5Yqo6YCJ5oupIiwKICAgICAgICAi6Ieq5Yqo6YCJ5oupIiwKICAgICAgICAi5bu26L+f6L6F5YqpIiwKICAgICAgICAi55u06L+eIgogICAgICBdCiAgICB9LAogICAgewogICAgICAidGFnIjogIuebtOi/niIsCiAgICAgICJ0eXBlIjogImRpcmVjdCIsCiAgICAgICJkb21haW5fcmVzb2x2ZXIiOiAiYWxpIgogICAgfQogIF0sCiAgImh0dHBfY2xpZW50cyI6IFsKICAgIHsKICAgICAgInRhZyI6ICLnm7Tov57kuIvovb0iLAogICAgICAiZGV0b3VyIjogIuebtOi/niIKICAgIH0KICBdLAogICJyb3V0ZSI6IHsKICAgICJydWxlcyI6IFsKICAgICAgewogICAgICAgICJzb3VyY2VfaXBfY2lkciI6IFsKICAgICAgICAgICIxMC4wLjAuNi8zMiIKICAgICAgICBdLAogICAgICAgICJvdXRib3VuZCI6ICLnm7Tov54iCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAiZG9tYWluX3N1ZmZpeCI6IFsKICAgICAgICAgICJiYWlkdWJhaWR1LndpbiIsCiAgICAgICAgICAicHN0YXRwLmNvbSIsCiAgICAgICAgICAidG91dGlhb2Nkbi5jb20iLAogICAgICAgICAgImJ5dGVnZWNrby5jb20iLAogICAgICAgICAgInRvdXRpYW9zdGF0aWMuY29tIiwKICAgICAgICAgICJpYnl0ZWRhcG0uY29tIiwKICAgICAgICAgICJzbnNzZGsuY29tIiwKICAgICAgICAgICJieXRlZGFuY2UubmV0IiwKICAgICAgICAgICJ6aWppZWFwaS5jb20iLAogICAgICAgICAgImNubGFuZy5vcmciLAogICAgICAgICAgIjEwMDAxLmJhaWR1YmFpZHUud2luIgogICAgICAgIF0sCiAgICAgICAgIm91dGJvdW5kIjogIuebtOi/niIKICAgICAgfSwKICAgICAgewogICAgICAgICJ0eXBlIjogImxvZ2ljYWwiLAogICAgICAgICJtb2RlIjogImFuZCIsCiAgICAgICAgInJ1bGVzIjogWwogICAgICAgICAgewogICAgICAgICAgICAicG9ydCI6IFsKICAgICAgICAgICAgICA1MywKICAgICAgICAgICAgICA4NTMKICAgICAgICAgICAgXSwKICAgICAgICAgICAgImludmVydCI6IHRydWUKICAgICAgICAgIH0sCiAgICAgICAgICB7CiAgICAgICAgICAgICJjbGFzaF9tb2RlIjogIkdsb2JhbCIsCiAgICAgICAgICAgICJpbnZlcnQiOiB0cnVlCiAgICAgICAgICB9LAogICAgICAgICAgewogICAgICAgICAgICAidHlwZSI6ICJsb2dpY2FsIiwKICAgICAgICAgICAgIm1vZGUiOiAib3IiLAogICAgICAgICAgICAicnVsZXMiOiBbCiAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgImlwX2lzX3ByaXZhdGUiOiB0cnVlCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAicnVsZV9zZXQiOiAiZ2VvaXAtY24iCiAgICAgICAgICAgICAgfQogICAgICAgICAgICBdCiAgICAgICAgICB9CiAgICAgICAgXSwKICAgICAgICAiYWN0aW9uIjogImJ5cGFzcyIKICAgICAgfSwKICAgICAgewogICAgICAgICJ0eXBlIjogImxvZ2ljYWwiLAogICAgICAgICJtb2RlIjogIm9yIiwKICAgICAgICAicnVsZXMiOiBbCiAgICAgICAgICB7CiAgICAgICAgICAgICJkb21haW5fc3VmZml4IjogInB1c2guYXBwbGUuY29tIgogICAgICAgICAgfSwKICAgICAgICAgIHsKICAgICAgICAgICAgInJ1bGVfc2V0IjogImdlb2lwLXRlbGVncmFtIgogICAgICAgICAgfQogICAgICAgIF0sCiAgICAgICAgImludmVydCI6IHRydWUsCiAgICAgICAgImFjdGlvbiI6ICJzbmlmZiIsCiAgICAgICAgInNuaWZmZXIiOiBbCiAgICAgICAgICAiaHR0cCIsCiAgICAgICAgICAidGxzIiwKICAgICAgICAgICJzdHVuIiwKICAgICAgICAgICJxdWljIiwKICAgICAgICAgICJkbnMiCiAgICAgICAgXSwKICAgICAgICAidGltZW91dCI6ICIxMDBtcyIKICAgICAgfSwKICAgICAgewogICAgICAgICJ0eXBlIjogImxvZ2ljYWwiLAogICAgICAgICJtb2RlIjogIm9yIiwKICAgICAgICAicnVsZXMiOiBbCiAgICAgICAgICB7CiAgICAgICAgICAgICJwb3J0IjogNTMKICAgICAgICAgIH0sCiAgICAgICAgICB7CiAgICAgICAgICAgICJwcm90b2NvbCI6ICJkbnMiCiAgICAgICAgICB9CiAgICAgICAgXSwKICAgICAgICAiYWN0aW9uIjogImhpamFjay1kbnMiCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAicG9ydCI6IDEyMywKICAgICAgICAib3V0Ym91bmQiOiAi55u06L+eIgogICAgICB9LAogICAgICB7CiAgICAgICAgImlwX2lzX3ByaXZhdGUiOiB0cnVlLAogICAgICAgICJvdXRib3VuZCI6ICLnm7Tov54iCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAidHlwZSI6ICJsb2dpY2FsIiwKICAgICAgICAibW9kZSI6ICJvciIsCiAgICAgICAgInJ1bGVzIjogWwogICAgICAgICAgewogICAgICAgICAgICAicG9ydCI6IDg1MwogICAgICAgICAgfSwKICAgICAgICAgIHsKICAgICAgICAgICAgInByb3RvY29sIjogWwogICAgICAgICAgICAgICJzdHVuIiwKICAgICAgICAgICAgICAicXVpYyIKICAgICAgICAgICAgXQogICAgICAgICAgfQogICAgICAgIF0sCiAgICAgICAgImFjdGlvbiI6ICJyZWplY3QiLAogICAgICAgICJub19kcm9wIjogdHJ1ZQogICAgICB9LAogICAgICB7CiAgICAgICAgIm5ldHdvcmsiOiAiaWNtcCIsCiAgICAgICAgImFjdGlvbiI6ICJyZXNvbHZlIgogICAgICB9LAogICAgICB7CiAgICAgICAgIm5ldHdvcmsiOiAiaWNtcCIsCiAgICAgICAgIm91dGJvdW5kIjogIuebtOi/niIKICAgICAgfSwKICAgICAgewogICAgICAgICJjbGFzaF9tb2RlIjogIkRpcmVjdCIsCiAgICAgICAgIm91dGJvdW5kIjogIuebtOi/niIKICAgICAgfSwKICAgICAgewogICAgICAgICJjbGFzaF9tb2RlIjogIkdsb2JhbCIsCiAgICAgICAgIm91dGJvdW5kIjogIkdMT0JBTCIKICAgICAgfSwKICAgICAgewogICAgICAgICJydWxlX3NldCI6ICJnZW9zaXRlLXByaXZhdGUiLAogICAgICAgICJvdXRib3VuZCI6ICLnm7Tov54iCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAicnVsZV9zZXQiOiAiZ2Vvc2l0ZS1jYXRlZ29yeS1haS0hY24iLAogICAgICAgICJvdXRib3VuZCI6ICJBSSIKICAgICAgfSwKICAgICAgewogICAgICAgICJkb21haW5fc3VmZml4IjogWwogICAgICAgICAgImhhcmsuY29tIgogICAgICAgIF0sCiAgICAgICAgIm91dGJvdW5kIjogIkhhcmsiCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAicnVsZV9zZXQiOiAiZ2Vvc2l0ZS15b3V0dWJlIiwKICAgICAgICAib3V0Ym91bmQiOiAiWW91VHViZSIKICAgICAgfSwKICAgICAgewogICAgICAgICJydWxlX3NldCI6ICJnZW9zaXRlLWdvb2dsZSIsCiAgICAgICAgIm91dGJvdW5kIjogIkdvb2dsZSIKICAgICAgfSwKICAgICAgewogICAgICAgICJydWxlX3NldCI6ICJnZW9zaXRlLWdpdGh1YiIsCiAgICAgICAgIm91dGJvdW5kIjogIkdpdGh1YiIKICAgICAgfSwKICAgICAgewogICAgICAgICJydWxlX3NldCI6ICJnZW9zaXRlLW9uZWRyaXZlIiwKICAgICAgICAib3V0Ym91bmQiOiAiT25lRHJpdmUiCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAicnVsZV9zZXQiOiAiZ2Vvc2l0ZS1taWNyb3NvZnRAY24iLAogICAgICAgICJvdXRib3VuZCI6ICLnm7Tov54iCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAicnVsZV9zZXQiOiAiZ2Vvc2l0ZS1taWNyb3NvZnQiLAogICAgICAgICJvdXRib3VuZCI6ICJNaWNyb3NvZnQiCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAicnVsZV9zZXQiOiAiZ2Vvc2l0ZS1hcHBsZUBjbiIsCiAgICAgICAgIm91dGJvdW5kIjogIuebtOi/niIKICAgICAgfSwKICAgICAgewogICAgICAgICJydWxlX3NldCI6ICJnZW9zaXRlLWFwcGxlIiwKICAgICAgICAib3V0Ym91bmQiOiAiQXBwbGUiCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAicnVsZV9zZXQiOiAiZ2Vvc2l0ZS10ZWxlZ3JhbSIsCiAgICAgICAgIm91dGJvdW5kIjogIlRlbGVncmFtIgogICAgICB9LAogICAgICB7CiAgICAgICAgInJ1bGVfc2V0IjogImdlb3NpdGUtdGlrdG9rIiwKICAgICAgICAib3V0Ym91bmQiOiAiVGlrVG9rIgogICAgICB9LAogICAgICB7CiAgICAgICAgInJ1bGVfc2V0IjogImdlb3NpdGUtbmV0ZmxpeCIsCiAgICAgICAgIm91dGJvdW5kIjogIk5ldGZsaXgiCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAicnVsZV9zZXQiOiAiZ2Vvc2l0ZS1wYXlwYWwiLAogICAgICAgICJvdXRib3VuZCI6ICJQYXlQYWwiCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAicnVsZV9zZXQiOiAiZ2Vvc2l0ZS1iaW5hbmNlIiwKICAgICAgICAib3V0Ym91bmQiOiAiUGF5UGFsIgogICAgICB9LAogICAgICB7CiAgICAgICAgInJ1bGVfc2V0IjogImdlb3NpdGUtb2t4IiwKICAgICAgICAib3V0Ym91bmQiOiAiUGF5UGFsIgogICAgICB9LAogICAgICB7CiAgICAgICAgInJ1bGVfc2V0IjogImdlb3NpdGUtY2F0ZWdvcnktY3J5cHRvY3VycmVuY3kiLAogICAgICAgICJvdXRib3VuZCI6ICJQYXlQYWwiCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAicnVsZV9zZXQiOiAiZ2Vvc2l0ZS1zdGVhbUBjbiIsCiAgICAgICAgIm91dGJvdW5kIjogIuebtOi/niIKICAgICAgfSwKICAgICAgewogICAgICAgICJydWxlX3NldCI6ICJnZW9zaXRlLXN0ZWFtIiwKICAgICAgICAib3V0Ym91bmQiOiAiU3RlYW0iCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAicnVsZV9zZXQiOiAiZ2Vvc2l0ZS1nZW9sb2NhdGlvbi0hY24iLAogICAgICAgICJvdXRib3VuZCI6ICLpu5jorqTku6PnkIYiCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAiaW5ib3VuZCI6ICJtaXhlZC1pbiIsCiAgICAgICAgImFjdGlvbiI6ICJyZXNvbHZlIgogICAgICB9LAogICAgICB7CiAgICAgICAgInJ1bGVfc2V0IjogImdlb2lwLXRlbGVncmFtIiwKICAgICAgICAib3V0Ym91bmQiOiAiVGVsZWdyYW0iCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAicnVsZV9zZXQiOiAiZ2VvaXAtY24iLAogICAgICAgICJvdXRib3VuZCI6ICLnm7Tov54iCiAgICAgIH0KICAgIF0sCiAgICAicnVsZV9zZXQiOiBbCiAgICAgIHsKICAgICAgICAidGFnIjogWwogICAgICAgICAgImZha2VpcGZpbHRlci1jbiIsCiAgICAgICAgICAiZmFrZWlwZmlsdGVyLSFjbiIKICAgICAgICBdLAogICAgICAgICJ0eXBlIjogInJlbW90ZSIsCiAgICAgICAgImZvcm1hdCI6ICJzb3VyY2UiLAogICAgICAgICJ1cmwiOiAiaHR0cHM6Ly9naC1wcm94eS5jb20vaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3FpY2hpeXVodWIvcnVsZS9yZWZzL2hlYWRzL21haW4vcnVsZXMve3RhZ30uanNvbiIKICAgICAgfSwKICAgICAgewogICAgICAgICJ0YWciOiBbCiAgICAgICAgICAiZ2Vvc2l0ZS1jYXRlZ29yeS1haS0hY24iLAogICAgICAgICAgImdlb3NpdGUteW91dHViZSIsCiAgICAgICAgICAiZ2Vvc2l0ZS1nb29nbGUiLAogICAgICAgICAgImdlb3NpdGUtZ2l0aHViIiwKICAgICAgICAgICJnZW9zaXRlLW9uZWRyaXZlIiwKICAgICAgICAgICJnZW9zaXRlLW1pY3Jvc29mdCIsCiAgICAgICAgICAiZ2Vvc2l0ZS1taWNyb3NvZnRAY24iLAogICAgICAgICAgImdlb3NpdGUtYXBwbGUiLAogICAgICAgICAgImdlb3NpdGUtYXBwbGVAY24iLAogICAgICAgICAgImdlb3NpdGUtdGVsZWdyYW0iLAogICAgICAgICAgImdlb3NpdGUtdGlrdG9rIiwKICAgICAgICAgICJnZW9zaXRlLW5ldGZsaXgiLAogICAgICAgICAgImdlb3NpdGUtcGF5cGFsIiwKICAgICAgICAgICJnZW9zaXRlLWJpbmFuY2UiLAogICAgICAgICAgImdlb3NpdGUtb2t4IiwKICAgICAgICAgICJnZW9zaXRlLWNhdGVnb3J5LWNyeXB0b2N1cnJlbmN5IiwKICAgICAgICAgICJnZW9zaXRlLXN0ZWFtQGNuIiwKICAgICAgICAgICJnZW9zaXRlLXN0ZWFtIiwKICAgICAgICAgICJnZW9zaXRlLWdlb2xvY2F0aW9uLSFjbiIsCiAgICAgICAgICAiZ2Vvc2l0ZS1jbiIsCiAgICAgICAgICAiZ2Vvc2l0ZS1wcml2YXRlIgogICAgICAgIF0sCiAgICAgICAgInR5cGUiOiAicmVtb3RlIiwKICAgICAgICAiZm9ybWF0IjogImJpbmFyeSIsCiAgICAgICAgInVybCI6ICJodHRwczovL2doLXByb3h5LmNvbS9odHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vU2FnZXJOZXQvc2luZy1nZW9zaXRlL3J1bGUtc2V0L3t0YWd9LnNycyIKICAgICAgfSwKICAgICAgewogICAgICAgICJ0YWciOiAiZ2VvaXAtdGVsZWdyYW0iLAogICAgICAgICJ0eXBlIjogInJlbW90ZSIsCiAgICAgICAgImZvcm1hdCI6ICJiaW5hcnkiLAogICAgICAgICJ1cmwiOiAiaHR0cHM6Ly9naC1wcm94eS5jb20vaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL01ldGFDdWJlWC9tZXRhLXJ1bGVzLWRhdC9zaW5nL2dlby9nZW9pcC90ZWxlZ3JhbS5zcnMiCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAidGFnIjogImdlb2lwLWNuIiwKICAgICAgICAidHlwZSI6ICJyZW1vdGUiLAogICAgICAgICJmb3JtYXQiOiAiYmluYXJ5IiwKICAgICAgICAidXJsIjogImh0dHBzOi8vZ2gtcHJveHkuY29tL2h0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9TYWdlck5ldC9zaW5nLWdlb2lwL3J1bGUtc2V0L2dlb2lwLWNuLnNycyIKICAgICAgfQogICAgXSwKICAgICJmaW5hbCI6ICLmvI/nvZHkuYvpsbwiLAogICAgImRlZmF1bHRfaHR0cF9jbGllbnQiOiAi55u06L+e5LiL6L29IiwKICAgICJhdXRvX2RldGVjdF9pbnRlcmZhY2UiOiB0cnVlLAogICAgImRlZmF1bHRfZG9tYWluX3Jlc29sdmVyIjogewogICAgICAic2VydmVyIjogImFsaSIKICAgIH0KICB9LAogICJpbmJvdW5kcyI6IFsKICAgIHsKICAgICAgInRhZyI6ICJ0dW4taW4iLAogICAgICAidHlwZSI6ICJ0dW4iLAogICAgICAiYWRkcmVzcyI6IFsKICAgICAgICAiMTcyLjE5LjAuMS8zMCIsCiAgICAgICAgImZkZmU6ZGNiYTo5ODc2OjoxLzEyNiIKICAgICAgXSwKICAgICAgImF1dG9fcm91dGUiOiB0cnVlLAogICAgICAiYXV0b19yZWRpcmVjdCI6IHRydWUKICAgIH0sCiAgICB7CiAgICAgICJ0YWciOiAibWl4ZWQtaW4iLAogICAgICAidHlwZSI6ICJtaXhlZCIsCiAgICAgICJsaXN0ZW4iOiAiMC4wLjAuMCIsCiAgICAgICJsaXN0ZW5fcG9ydCI6IDc4OTAKICAgIH0KICBdLAogICJzZXJ2aWNlcyI6IFsKICAgIHsKICAgICAgInR5cGUiOiAiYXBpIiwKICAgICAgImxpc3RlbiI6ICIwLjAuMC4wIiwKICAgICAgImxpc3Rlbl9wb3J0IjogOTA5MCwKICAgICAgInNlY3JldCI6ICIiLAogICAgICAiZGFzaGJvYXJkIjogewogICAgICAgICJlbmFibGVkIjogdHJ1ZSwKICAgICAgICAicGF0aCI6ICIvZXRjL3NpbmctYm94L2Rhc2hib2FyZCIKICAgICAgfQogICAgfQogIF0sCiAgImV4cGVyaW1lbnRhbCI6IHsKICAgICJjYWNoZV9maWxlIjogewogICAgICAiZW5hYmxlZCI6IHRydWUsCiAgICAgICJwYXRoIjogIi9ldGMvc2luZy1ib3gvY2FjaGUuZGIiLAogICAgICAic3RvcmVfZG5zIjogdHJ1ZQogICAgfSwKICAgICJjbGFzaF9hcGkiOiB7CiAgICAgICJleHRlcm5hbF9jb250cm9sbGVyIjogIjAuMC4wLjA6OTA5NSIsCiAgICAgICJleHRlcm5hbF91aSI6ICIvZXRjL3NpbmctYm94L3VpIiwKICAgICAgInNlY3JldCI6ICIiLAogICAgICAiZGVmYXVsdF9tb2RlIjogIlJ1bGUiCiAgICB9CiAgfSwKICAiY2VydGlmaWNhdGUiOiB7CiAgICAic3RvcmUiOiAiY2hyb21lIgogIH0sCiAgIm50cCI6IHsKICAgICJlbmFibGVkIjogdHJ1ZSwKICAgICJzZXJ2ZXIiOiAidGltZS5hcHBsZS5jb20iCiAgfSwKICAibG9nIjogewogICAgImRpc2FibGVkIjogZmFsc2UsCiAgICAibGV2ZWwiOiAiaW5mbyIsCiAgICAidGltZXN0YW1wIjogdHJ1ZQogIH0KfQ==
+{
+  "$schema": "https://sing-box.sagernet.org/schema.json",
+  "dns": {
+    "servers": [
+      {
+        "tag": "local",
+        "type": "local",
+        "prefer_go": true
+      },
+      {
+        "tag": "ali",
+        "type": "https",
+        "server": "223.5.5.5"
+      },
+      {
+        "tag": "tx",
+        "type": "https",
+        "server": "doh.pub",
+        "domain_resolver": "hosts"
+      },
+      {
+        "tag": "google",
+        "type": "https",
+        "server": "8.8.8.8",
+        "detour": "默认代理"
+      },
+      {
+        "tag": "fakeip",
+        "type": "fakeip",
+        "inet4_range": "198.19.0.0/16"
+      },
+      {
+        "type": "hosts",
+        "tag": "hosts",
+        "predefined": {
+          "doh.pub": [
+            "1.12.12.21",
+            "120.53.53.53"
+          ]
+        }
+      }
+    ],
+    "rules": [
+      {
+        "query_type": [
+          "HTTPS",
+          "SVCB"
+        ],
+        "action": "reject"
+      },
+      {
+        "clash_mode": "Direct",
+        "server": "ali"
+      },
+      {
+        "clash_mode": "Global",
+        "server": "fakeip"
+      },
+      {
+        "rule_set": [
+          "fakeipfilter-cn",
+          "geosite-cn",
+          "geosite-microsoft@cn",
+          "geosite-apple@cn",
+          "geosite-private"
+        ],
+        "server": "ali"
+      },
+      {
+        "rule_set": "fakeipfilter-!cn",
+        "server": "google"
+      },
+      {
+        "type": "logical",
+        "mode": "and",
+        "rules": [
+          {
+            "query_type": [
+              "A",
+              "AAAA"
+            ]
+          },
+          {
+            "rule_set": "geosite-geolocation-!cn",
+            "invert": true
+          }
+        ],
+        "action": "evaluate",
+        "server": "google",
+        "client_subnet": "223.5.5.0/24",
+        "timeout": "2s"
+      },
+      {
+        "match_response": true,
+        "rule_set": "geoip-cn",
+        "server": "ali"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "fakeip",
+        "rewrite_ttl": 1
+      }
+    ],
+    "final": "google",
+    "strategy": "ipv4_only",
+    "cache_capacity": 8192,
+    "optimistic": {
+      "enabled": true
+    },
+    "reverse_mapping": true
+  },
+  "outbounds": [
+    {
+      "tag": "日本自动",
+      "type": "urltest",
+      "outbounds": [
+        "{all}"
+      ],
+      "filter": [
+        {
+          "action": "include",
+          "keywords": [
+            "🇯🇵",
+            "JP",
+            "jp",
+            "日本",
+            "日",
+            "Japan"
+          ]
+        },
+        {
+          "action": "exclude",
+          "keywords": [
+            "免费"
+          ]
+        }
+      ],
+      "url": "https://clients1.google.com/generate_204",
+      "interval": "3m",
+      "tolerance": 30
+    },
+    {
+      "tag": "狮城自动",
+      "type": "urltest",
+      "outbounds": [
+        "{all}"
+      ],
+      "filter": [
+        {
+          "action": "include",
+          "keywords": [
+            "🇸🇬",
+            "SG",
+            "sg",
+            "新加坡",
+            "狮城",
+            "Singapore"
+          ]
+        },
+        {
+          "action": "exclude",
+          "keywords": [
+            "免费"
+          ]
+        }
+      ],
+      "url": "https://clients1.google.com/generate_204",
+      "interval": "3m",
+      "tolerance": 30
+    },
+    {
+      "tag": "香港自动",
+      "type": "urltest",
+      "outbounds": [
+        "{all}"
+      ],
+      "filter": [
+        {
+          "action": "include",
+          "keywords": [
+            "🇭🇰",
+            "HK",
+            "hk",
+            "香港",
+            "港",
+            "HongKong"
+          ]
+        },
+        {
+          "action": "exclude",
+          "keywords": [
+            "免费"
+          ]
+        }
+      ],
+      "url": "https://clients1.google.com/generate_204",
+      "interval": "5m",
+      "tolerance": 30
+    },
+    {
+      "tag": "美国自动",
+      "type": "urltest",
+      "outbounds": [
+        "{all}"
+      ],
+      "filter": [
+        {
+          "action": "include",
+          "keywords": [
+            "🇺🇸",
+            "US",
+            "us",
+            "美国",
+            "美",
+            "United States"
+          ]
+        },
+        {
+          "action": "exclude",
+          "keywords": [
+            "AUS",
+            "RUS",
+            "免费"
+          ]
+        }
+      ],
+      "url": "https://clients1.google.com/generate_204",
+      "interval": "3m",
+      "tolerance": 30
+    },
+    {
+      "tag": "手动选择",
+      "type": "selector",
+      "outbounds": [
+        "{all}"
+      ],
+      "filter": [
+        {
+          "action": "exclude",
+          "keywords": [
+            "官网",
+            "到期时间",
+            "剩余",
+            "流量",
+            "套餐",
+            "免费",
+            "订阅",
+            "全球直连",
+            "GB",
+            "Expire Date",
+            "Traffic",
+            "ExpireDate"
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "自动选择",
+      "type": "urltest",
+      "outbounds": [
+        "{all}"
+      ],
+      "filter": [
+        {
+          "action": "exclude",
+          "keywords": [
+            "官网",
+            "到期时间",
+            "剩余",
+            "流量",
+            "套餐",
+            "免费",
+            "订阅",
+            "全球直连",
+            "GB",
+            "Expire Date",
+            "Traffic",
+            "ExpireDate"
+          ]
+        }
+      ],
+      "url": "https://clients1.google.com/generate_204",
+      "interval": "3m",
+      "tolerance": 30
+    },
+    {
+      "tag": "延迟辅助",
+      "type": "urltest",
+      "outbounds": [
+        "直连"
+      ],
+      "url": "http://connect.rom.miui.com/generate_204",
+      "interval": "30m"
+    },
+    {
+      "tag": "默认代理",
+      "type": "selector",
+      "outbounds": [
+        "日本自动",
+        "狮城自动",
+        "香港自动",
+        "美国自动",
+        "手动选择",
+        "自动选择"
+      ]
+    },
+    {
+      "tag": "AI",
+      "type": "selector",
+      "outbounds": [
+        "日本自动",
+        "狮城自动",
+        "香港自动",
+        "美国自动",
+        "手动选择",
+        "自动选择"
+      ]
+    },
+    {
+      "tag": "Hark",
+      "type": "selector",
+      "outbounds": [
+        "日本自动",
+        "狮城自动",
+        "香港自动",
+        "美国自动",
+        "手动选择",
+        "自动选择"
+      ]
+    },
+    {
+      "tag": "X",
+      "type": "selector",
+      "outbounds": [
+        "日本自动",
+        "狮城自动",
+        "香港自动",
+        "美国自动",
+        "手动选择",
+        "自动选择"
+      ]
+    },
+    {
+      "tag": "YouTube",
+      "type": "selector",
+      "outbounds": [
+        "日本自动",
+        "狮城自动",
+        "香港自动",
+        "美国自动",
+        "手动选择",
+        "自动选择"
+      ]
+    },
+    {
+      "tag": "Google",
+      "type": "selector",
+      "outbounds": [
+        "日本自动",
+        "狮城自动",
+        "香港自动",
+        "美国自动",
+        "手动选择",
+        "自动选择"
+      ]
+    },
+    {
+      "tag": "Github",
+      "type": "selector",
+      "outbounds": [
+        "日本自动",
+        "狮城自动",
+        "香港自动",
+        "美国自动",
+        "手动选择",
+        "自动选择"
+      ]
+    },
+    {
+      "tag": "Telegram",
+      "type": "selector",
+      "outbounds": [
+        "日本自动",
+        "狮城自动",
+        "香港自动",
+        "美国自动",
+        "手动选择",
+        "自动选择"
+      ]
+    },
+    {
+      "tag": "TikTok",
+      "type": "selector",
+      "outbounds": [
+        "日本自动",
+        "狮城自动",
+        "香港自动",
+        "美国自动",
+        "手动选择",
+        "自动选择"
+      ]
+    },
+    {
+      "tag": "Netflix",
+      "type": "selector",
+      "outbounds": [
+        "日本自动",
+        "狮城自动",
+        "香港自动",
+        "美国自动",
+        "手动选择",
+        "自动选择"
+      ]
+    },
+    {
+      "tag": "PayPal",
+      "type": "selector",
+      "outbounds": [
+        "日本自动",
+        "狮城自动",
+        "香港自动",
+        "美国自动",
+        "手动选择",
+        "自动选择"
+      ]
+    },
+    {
+      "tag": "Steam",
+      "type": "selector",
+      "outbounds": [
+        "日本自动",
+        "狮城自动",
+        "香港自动",
+        "美国自动",
+        "手动选择",
+        "自动选择"
+      ]
+    },
+    {
+      "tag": "Microsoft",
+      "type": "selector",
+      "outbounds": [
+        "日本自动",
+        "直连",
+        "狮城自动",
+        "香港自动",
+        "美国自动",
+        "手动选择",
+        "自动选择"
+      ]
+    },
+    {
+      "tag": "OneDrive",
+      "type": "selector",
+      "outbounds": [
+        "日本自动",
+        "直连",
+        "狮城自动",
+        "香港自动",
+        "美国自动",
+        "手动选择",
+        "自动选择"
+      ]
+    },
+    {
+      "tag": "Apple",
+      "type": "selector",
+      "outbounds": [
+        "日本自动",
+        "狮城自动",
+        "香港自动",
+        "美国自动",
+        "手动选择",
+        "自动选择",
+        "直连"
+      ]
+    },
+    {
+      "tag": "漏网之鱼",
+      "type": "selector",
+      "outbounds": [
+        "默认代理",
+        "日本自动",
+        "狮城自动",
+        "香港自动",
+        "美国自动",
+        "手动选择",
+        "自动选择",
+        "直连"
+      ]
+    },
+    {
+      "tag": "GLOBAL",
+      "type": "selector",
+      "outbounds": [
+        "默认代理",
+        "AI",
+        "X",
+        "YouTube",
+        "Google",
+        "Github",
+        "Telegram",
+        "TikTok",
+        "Netflix",
+        "PayPal",
+        "Steam",
+        "Microsoft",
+        "OneDrive",
+        "Apple",
+        "漏网之鱼",
+        "日本自动",
+        "狮城自动",
+        "香港自动",
+        "美国自动",
+        "手动选择",
+        "自动选择",
+        "延迟辅助",
+        "直连"
+      ]
+    },
+    {
+      "tag": "直连",
+      "type": "direct",
+      "domain_resolver": "ali"
+    }
+  ],
+  "http_clients": [
+    {
+      "tag": "直连下载",
+      "detour": "直连"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "source_ip_cidr": [
+          "10.0.0.6/32"
+        ],
+        "outbound": "直连"
+      },
+      {
+        "domain_suffix": [
+          "baidubaidu.win",
+          "pstatp.com",
+          "toutiaocdn.com",
+          "bytegecko.com",
+          "toutiaostatic.com",
+          "ibytedapm.com",
+          "snssdk.com",
+          "bytedance.net",
+          "zijieapi.com",
+          "cnlang.org",
+          "10001.baidubaidu.win"
+        ],
+        "outbound": "直连"
+      },
+      {
+        "type": "logical",
+        "mode": "and",
+        "rules": [
+          {
+            "port": [
+              53,
+              853
+            ],
+            "invert": true
+          },
+          {
+            "clash_mode": "Global",
+            "invert": true
+          },
+          {
+            "type": "logical",
+            "mode": "or",
+            "rules": [
+              {
+                "ip_is_private": true
+              },
+              {
+                "rule_set": "geoip-cn"
+              }
+            ]
+          }
+        ],
+        "action": "bypass"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "domain_suffix": "push.apple.com"
+          },
+          {
+            "rule_set": "geoip-telegram"
+          }
+        ],
+        "invert": true,
+        "action": "sniff",
+        "sniffer": [
+          "http",
+          "tls",
+          "stun",
+          "quic",
+          "dns"
+        ],
+        "timeout": "100ms"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "port": 53
+          },
+          {
+            "protocol": "dns"
+          }
+        ],
+        "action": "hijack-dns"
+      },
+      {
+        "port": 123,
+        "outbound": "直连"
+      },
+      {
+        "ip_is_private": true,
+        "outbound": "直连"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "port": 853
+          },
+          {
+            "protocol": [
+              "stun",
+              "quic"
+            ]
+          }
+        ],
+        "action": "reject",
+        "no_drop": true
+      },
+      {
+        "network": "icmp",
+        "action": "resolve"
+      },
+      {
+        "network": "icmp",
+        "outbound": "直连"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "直连"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "GLOBAL"
+      },
+      {
+        "rule_set": "geosite-private",
+        "outbound": "直连"
+      },
+      {
+        "rule_set": "geosite-category-ai-!cn",
+        "outbound": "AI"
+      },
+      {
+        "domain_suffix": [
+          "hark.com"
+        ],
+        "outbound": "Hark"
+      },
+      {
+        "rule_set": "geosite-youtube",
+        "outbound": "YouTube"
+      },
+      {
+        "rule_set": "geosite-google",
+        "outbound": "Google"
+      },
+      {
+        "rule_set": "geosite-github",
+        "outbound": "Github"
+      },
+      {
+        "rule_set": "geosite-onedrive",
+        "outbound": "OneDrive"
+      },
+      {
+        "rule_set": "geosite-microsoft@cn",
+        "outbound": "直连"
+      },
+      {
+        "rule_set": "geosite-microsoft",
+        "outbound": "Microsoft"
+      },
+      {
+        "rule_set": "geosite-apple@cn",
+        "outbound": "直连"
+      },
+      {
+        "rule_set": "geosite-apple",
+        "outbound": "Apple"
+      },
+      {
+        "rule_set": "geosite-telegram",
+        "outbound": "Telegram"
+      },
+      {
+        "rule_set": "geosite-tiktok",
+        "outbound": "TikTok"
+      },
+      {
+        "rule_set": "geosite-netflix",
+        "outbound": "Netflix"
+      },
+      {
+        "rule_set": "geosite-paypal",
+        "outbound": "PayPal"
+      },
+      {
+        "rule_set": "geosite-binance",
+        "outbound": "PayPal"
+      },
+      {
+        "rule_set": "geosite-okx",
+        "outbound": "PayPal"
+      },
+      {
+        "rule_set": "geosite-category-cryptocurrency",
+        "outbound": "PayPal"
+      },
+      {
+        "rule_set": "geosite-steam@cn",
+        "outbound": "直连"
+      },
+      {
+        "rule_set": "geosite-steam",
+        "outbound": "Steam"
+      },
+      {
+        "rule_set": "geosite-geolocation-!cn",
+        "outbound": "默认代理"
+      },
+      {
+        "inbound": "mixed-in",
+        "action": "resolve"
+      },
+      {
+        "rule_set": "geoip-telegram",
+        "outbound": "Telegram"
+      },
+      {
+        "rule_set": "geoip-cn",
+        "outbound": "直连"
+      }
+    ],
+    "rule_set": [
+      {
+        "tag": [
+          "fakeipfilter-cn",
+          "fakeipfilter-!cn"
+        ],
+        "type": "remote",
+        "format": "source",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/main/rules/{tag}.json"
+      },
+      {
+        "tag": [
+          "geosite-category-ai-!cn",
+          "geosite-youtube",
+          "geosite-google",
+          "geosite-github",
+          "geosite-onedrive",
+          "geosite-microsoft",
+          "geosite-microsoft@cn",
+          "geosite-apple",
+          "geosite-apple@cn",
+          "geosite-telegram",
+          "geosite-tiktok",
+          "geosite-netflix",
+          "geosite-paypal",
+          "geosite-binance",
+          "geosite-okx",
+          "geosite-category-cryptocurrency",
+          "geosite-steam@cn",
+          "geosite-steam",
+          "geosite-geolocation-!cn",
+          "geosite-cn",
+          "geosite-private"
+        ],
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/{tag}.srs"
+      },
+      {
+        "tag": "geoip-telegram",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/telegram.srs"
+      },
+      {
+        "tag": "geoip-cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"
+      }
+    ],
+    "final": "漏网之鱼",
+    "default_http_client": "直连下载",
+    "auto_detect_interface": true,
+    "default_domain_resolver": {
+      "server": "ali"
+    }
+  },
+  "inbounds": [
+    {
+      "tag": "tun-in",
+      "type": "tun",
+      "address": [
+        "172.19.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "auto_route": true,
+      "auto_redirect": true
+    },
+    {
+      "tag": "mixed-in",
+      "type": "mixed",
+      "listen": "0.0.0.0",
+      "listen_port": 7890
+    }
+  ],
+  "services": [
+    {
+      "type": "api",
+      "listen": "0.0.0.0",
+      "listen_port": 9090,
+      "secret": "",
+      "dashboard": {
+        "enabled": true,
+        "path": "/etc/sing-box/dashboard"
+      }
+    }
+  ],
+  "experimental": {
+    "cache_file": {
+      "enabled": true,
+      "path": "/etc/sing-box/cache.db",
+      "store_dns": true
+    },
+    "clash_api": {
+      "external_controller": "0.0.0.0:9095",
+      "external_ui": "/etc/sing-box/ui",
+      "secret": "",
+      "default_mode": "Rule"
+    }
+  },
+  "certificate": {
+    "store": "chrome"
+  },
+  "ntp": {
+    "enabled": true,
+    "server": "time.apple.com"
+  },
+  "log": {
+    "disabled": false,
+    "level": "info",
+    "timestamp": true
+  }
+}
