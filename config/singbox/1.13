@@ -549,7 +549,9 @@
           "bytegecko.com",
           "toutiaostatic.com",
           "ibytedapm.com",
-          "snssdk.com"
+          "snssdk.com",
+          "bytedance.net",
+          "zijieapi.com"
         ],
         "outbound": "直连"
       },
