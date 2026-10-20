@@ -325,6 +325,19 @@
       ]
     },
     {
+      "tag": "Wabi",
+      "type": "selector",
+      "outbounds": [
+        "日本自动",
+        "狮城自动",
+        "美国自动RN",
+        "美国自动G",
+        "手动选择",
+        "自动选择"
+      ],
+      "default": "美国自动G"
+    },
+    {
       "tag": "X",
       "type": "selector",
       "outbounds": [
@@ -665,6 +678,12 @@
           "hark.com"
         ],
         "outbound": "Hark"
+      },
+      {
+        "domain_suffix": [
+          "getwabi.ai"
+        ],
+        "outbound": "Wabi"
       },
       {
         "rule_set": "geosite-youtube",
