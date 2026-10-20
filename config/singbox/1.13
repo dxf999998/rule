@@ -681,7 +681,8 @@
       },
       {
         "domain_suffix": [
-          "getwabi.ai"
+          "getwabi.ai",
+          "wabi.ai"
         ],
         "outbound": "Wabi"
       },
