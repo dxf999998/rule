@@ -633,6 +633,15 @@
         "outbound": "直连"
       },
       {
+        "source_ip_cidr": [
+          "10.0.0.5/32"
+        ],
+        "network": [
+          "udp"
+        ],
+        "outbound": "直连"
+      },
+      {
         "type": "logical",
         "mode": "or",
         "rules": [
