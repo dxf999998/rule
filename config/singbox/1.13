@@ -652,6 +652,9 @@
           "10001.baidubaidu.win",
           "xmwav.net"
         ],
+        "domain_keyword": [
+          "baidubaidu"
+        ],
         "outbound": "直连"
       },
       {
