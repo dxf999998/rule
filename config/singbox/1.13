@@ -638,26 +638,6 @@
         "outbound": "直连"
       },
       {
-        "domain_suffix": [
-          "baidubaidu.win",
-          "pstatp.com",
-          "toutiaocdn.com",
-          "bytegecko.com",
-          "toutiaostatic.com",
-          "ibytedapm.com",
-          "snssdk.com",
-          "bytedance.net",
-          "zijieapi.com",
-          "cnlang.org",
-          "10001.baidubaidu.win",
-          "xmwav.net"
-        ],
-        "domain_keyword": [
-          "baidubaidu"
-        ],
-        "outbound": "直连"
-      },
-      {
         "type": "logical",
         "mode": "or",
         "rules": [
@@ -678,6 +658,26 @@
           "dns"
         ],
         "timeout": "100ms"
+      },
+      {
+        "domain_suffix": [
+          "baidubaidu.win",
+          "pstatp.com",
+          "toutiaocdn.com",
+          "bytegecko.com",
+          "toutiaostatic.com",
+          "ibytedapm.com",
+          "snssdk.com",
+          "bytedance.net",
+          "zijieapi.com",
+          "cnlang.org",
+          "10001.baidubaidu.win",
+          "xmwav.net"
+        ],
+        "domain_keyword": [
+          "baidubaidu"
+        ],
+        "outbound": "直连"
       },
       {
         "type": "logical",
