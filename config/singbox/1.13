@@ -201,6 +201,17 @@
       "tolerance": 30
     },
     {
+      "tag": "视频自动",
+      "type": "urltest",
+      "outbounds": [
+        "日本自动",
+        "美国自动RN"
+      ],
+      "url": "https://clients1.google.com/generate_204",
+      "interval": "3m",
+      "tolerance": 30
+    },
+    {
       "tag": "美国自动G",
       "type": "urltest",
       "outbounds": [
@@ -359,6 +370,7 @@
         "狮城自动",
         "美国自动RN",
         "美国自动G",
+        "视频自动",
         "手动选择",
         "自动选择"
       ]
