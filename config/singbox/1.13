@@ -594,6 +594,12 @@
   "route": {
     "rules": [
       {
+        "inbound": [
+          "borrow-in"
+        ],
+        "outbound": "视频自动"
+      },
+      {
         "type": "logical",
         "mode": "and",
         "rules": [
@@ -907,6 +913,12 @@
       "type": "mixed",
       "listen": "0.0.0.0",
       "listen_port": 7890
+    },
+    {
+      "tag": "borrow-in",
+      "type": "mixed",
+      "listen": "0.0.0.0",
+      "listen_port": 7892
     }
   ],
   "services": [
