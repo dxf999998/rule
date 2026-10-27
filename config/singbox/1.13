@@ -144,7 +144,7 @@
         }
       ],
       "url": "https://clients1.google.com/generate_204",
-      "interval": "3m",
+      "interval": "5m",
       "tolerance": 30
     },
     {
@@ -173,7 +173,7 @@
         }
       ],
       "url": "https://clients1.google.com/generate_204",
-      "interval": "3m",
+      "interval": "5m",
       "tolerance": 30
     },
     {
@@ -197,7 +197,7 @@
         }
       ],
       "url": "https://clients1.google.com/generate_204",
-      "interval": "3m",
+      "interval": "5m",
       "tolerance": 30
     },
     {
@@ -208,7 +208,7 @@
         "美国自动RN"
       ],
       "url": "https://clients1.google.com/generate_204",
-      "interval": "3m",
+      "interval": "5m",
       "tolerance": 30
     },
     {
@@ -232,7 +232,7 @@
         }
       ],
       "url": "https://clients1.google.com/generate_204",
-      "interval": "3m",
+      "interval": "5m",
       "tolerance": 30
     },
     {
@@ -287,7 +287,7 @@
         }
       ],
       "url": "https://clients1.google.com/generate_204",
-      "interval": "3m",
+      "interval": "5m",
       "tolerance": 30
     },
     {
@@ -554,7 +554,7 @@
         "借道306-节点"
       ],
       "url": "https://clients1.google.com/generate_204",
-      "interval": "3m",
+      "interval": "5m",
       "tolerance": 30
     },
     {
@@ -564,7 +564,7 @@
         "借道102-节点"
       ],
       "url": "https://clients1.google.com/generate_204",
-      "interval": "3m",
+      "interval": "5m",
       "tolerance": 30
     },
     {
